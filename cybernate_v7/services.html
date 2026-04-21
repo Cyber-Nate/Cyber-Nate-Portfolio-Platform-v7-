@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Services — Cyber Nate | Cybersecurity, IT Support & Web Development</title>
+<link rel="stylesheet" href="shared.css" />
+<style>
+.page-hero { padding: 140px 0 80px; }
+.page-hero h1 { margin-bottom: 16px; }
+.page-hero p { font-size: 1.05rem; max-width: 560px; }
+
+/* Service filter tabs */
+.filter-tabs { display: flex; gap: 10px; flex-wrap: wrap; margin: 40px 0 32px; }
+.filter-tab {
+  padding: 8px 18px; border-radius: 999px; border: 1px solid var(--border);
+  background: var(--bg-card); font-size: 0.85rem; font-weight: 500;
+  cursor: pointer; transition: var(--transition); color: var(--text-2);
+}
+.filter-tab.active, .filter-tab:hover {
+  background: var(--primary); color: #fff; border-color: var(--primary);
+}
+
+/* Service card */
+.services-full { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.svc-full-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 32px;
+  transition: var(--transition);
+}
+.svc-full-card:hover { border-color: var(--border-hover); transform: translateY(-4px); box-shadow: var(--shadow); }
+.svc-head { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 20px; }
+.svc-icon-box {
+  width: 52px; height: 52px; border-radius: 12px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center; font-size: 1.5rem;
+  background: rgba(59,130,246,0.1);
+}
+.svc-head h3 { margin-bottom: 4px; }
+.svc-head .tag { margin: 0; }
+.problem-solution { margin: 16px 0; }
+.ps-row { display: grid; grid-template-columns: 80px 1fr; gap: 0; }
+.ps-label {
+  font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em;
+  text-transform: uppercase; padding: 10px 0;
+  border-right: 1px solid var(--border);
+}
+.ps-label.problem { color: #f87171; }
+.ps-label.solution { color: #4ade80; }
+.ps-text { font-size: 0.9rem; color: var(--text-2); padding: 10px 16px; }
+.svc-deliverables { display: flex; gap: 8px; flex-wrap: wrap; margin: 16px 0; }
+.svc-cta { margin-top: 20px; }
+
+/* Pricing section */
+#pricing .pricing-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 40px; }
+.price-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 32px; text-align: center;
+  transition: var(--transition); position: relative;
+}
+.price-card.featured {
+  border-color: var(--primary);
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, var(--bg-card) 100%);
+}
+.price-badge {
+  position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+  background: var(--primary); color: #fff; font-size: 0.75rem; font-weight: 700;
+  padding: 4px 16px; border-radius: 999px; letter-spacing: 0.06em;
+}
+.price-amount { font-family: var(--font-display); font-size: 2.4rem; font-weight: 800; color: var(--text-1); margin: 16px 0 4px; }
+.price-period { font-size: 0.85rem; color: var(--text-3); margin-bottom: 20px; }
+.price-items { list-style: none; text-align: left; margin-bottom: 28px; }
+.price-items li { font-size: 0.88rem; color: var(--text-2); padding: 7px 0; border-bottom: 1px solid var(--border); display: flex; gap: 10px; }
+.price-items li::before { content: '✓'; color: var(--accent); font-weight: 700; flex-shrink: 0; }
+
+@media (max-width: 860px) {
+  .services-full { grid-template-columns: 1fr; }
+  #pricing .pricing-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="index.html" class="nav-logo">
+    <img src="assets/logo.png" alt="Cyber Nate Logo" onerror="this.style.display='none'">
+    <span class="nav-logo-text">Cyber<span>Nate</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html" class="active">Services</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="certifications.html">Certs</a></li>
+    <li><a href="academy.html">Academy</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="contact.html" class="btn-hire">Hire Me</a></li>
+  </ul>
+  <button class="hamburger"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu">
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a>
+  <a href="portfolio.html">Portfolio</a><a href="projects.html">Projects</a>
+  <a href="certifications.html">Certifications</a><a href="academy.html">Academy</a>
+  <a href="blog.html">Blog</a><a href="contact.html">Contact / Hire Me</a>
+</div>
+
+<div class="container">
+  <div class="page-hero reveal">
+    <div class="section-label">What I Offer</div>
+    <h1>Services</h1>
+    <p>From threat investigations to school digitisation — practical, results-driven solutions for businesses, organisations, and individuals across Nigeria and beyond.</p>
+  </div>
+</div>
+
+<!-- SERVICES GRID -->
+<section style="padding-top:0;">
+  <div class="container">
+    <div class="services-full">
+
+      <!-- 1. Cybersecurity Consulting -->
+      <div class="svc-full-card reveal">
+        <div class="svc-head">
+          <div class="svc-icon-box">🛡️</div>
+          <div><h3>Cybersecurity Consulting</h3><span class="tag tag-blue">Most Requested</span></div>
+        </div>
+        <div class="problem-solution">
+          <div class="ps-row">
+            <span class="ps-label problem">Problem</span>
+            <span class="ps-text">Your organisation has no visibility into its threat exposure — breaches happen silently.</span>
+          </div>
+          <div class="ps-row">
+            <span class="ps-label solution">Solution</span>
+            <span class="ps-text">I assess your security posture, identify gaps, and deliver actionable recommendations with prioritised remediation.</span>
+          </div>
+        </div>
+        <div class="svc-deliverables">
+          <span class="tag tag-blue">Risk Assessment</span><span class="tag tag-blue">Security Policies</span>
+          <span class="tag tag-blue">Incident Response Planning</span><span class="tag tag-blue">Staff Awareness</span>
+        </div>
+        <div class="svc-cta"><a href="contact.html" class="btn btn-primary btn-sm">Request Consultation</a></div>
+      </div>
+
+      <!-- 2. Penetration Testing -->
+      <div class="svc-full-card reveal">
+        <div class="svc-head">
+          <div class="svc-icon-box">🔍</div>
+          <div><h3>Penetration Testing (VAPT)</h3><span class="tag tag-red">High Value</span></div>
+        </div>
+        <div class="problem-solution">
+          <div class="ps-row">
+            <span class="ps-label problem">Problem</span>
+            <span class="ps-text">You don't know what vulnerabilities exist in your web app or network until attackers find them first.</span>
+          </div>
+          <div class="ps-row">
+            <span class="ps-label solution">Solution</span>
+            <span class="ps-text">Structured VAPT with a formal report — findings ranked by severity with technical and business-language explanations.</span>
+          </div>
+        </div>
+        <div class="svc-deliverables">
+          <span class="tag tag-red">Web App Testing</span><span class="tag tag-red">Network Scanning</span>
+          <span class="tag tag-red">OWASP Top 10</span><span class="tag tag-red">VAPT Report</span>
+        </div>
+        <div class="svc-cta"><a href="contact.html" class="btn btn-primary btn-sm">Request VAPT</a></div>
+      </div>
+
+      <!-- 3. Web Development -->
+      <div class="svc-full-card reveal">
+        <div class="svc-head">
+          <div class="svc-icon-box">💻</div>
+          <div><h3>Web Development</h3></div>
+        </div>
+        <div class="problem-solution">
+          <div class="ps-row">
+            <span class="ps-label problem">Problem</span>
+            <span class="ps-text">Your online presence doesn't reflect your quality — or you don't have one at all, costing you clients.</span>
+          </div>
+          <div class="ps-row">
+            <span class="ps-label solution">Solution</span>
+            <span class="ps-text">Custom, fast, mobile-first websites and platforms built to convert — from portfolios to full school management systems.</span>
+          </div>
+        </div>
+        <div class="svc-deliverables">
+          <span class="tag tag-purple">Portfolio Sites</span><span class="tag tag-purple">Business Websites</span>
+          <span class="tag tag-purple">LMS / SaaS</span><span class="tag tag-purple">WordPress</span>
+        </div>
+        <div class="svc-cta"><a href="contact.html" class="btn btn-primary btn-sm">Request Website</a></div>
+      </div>
+
+      <!-- 4. IT Support -->
+      <div class="svc-full-card reveal">
+        <div class="svc-head">
+          <div class="svc-icon-box">🖥️</div>
+          <div><h3>IT Support & Administration</h3></div>
+        </div>
+        <div class="problem-solution">
+          <div class="ps-row">
+            <span class="ps-label problem">Problem</span>
+            <span class="ps-text">Manual IT systems lead to downtime, slow workflows, and constant firefighting instead of productivity.</span>
+          </div>
+          <div class="ps-row">
+            <span class="ps-label solution">Solution</span>
+            <span class="ps-text">Reliable IT support and system optimisation — hardware setup, network config, troubleshooting, and remote support.</span>
+          </div>
+        </div>
+        <div class="svc-deliverables">
+          <span class="tag tag-amber">Hardware Setup</span><span class="tag tag-amber">Network Config</span>
+          <span class="tag tag-amber">Remote Support</span><span class="tag tag-amber">OS/Software</span>
+        </div>
+        <div class="svc-cta"><a href="contact.html" class="btn btn-primary btn-sm">Request IT Support</a></div>
+      </div>
+
+      <!-- 5. Hardware Supply -->
+      <div class="svc-full-card reveal">
+        <div class="svc-head">
+          <div class="svc-icon-box">🔧</div>
+          <div><h3>Hardware Supply & Procurement</h3></div>
+        </div>
+        <div class="problem-solution">
+          <div class="ps-row">
+            <span class="ps-label problem">Problem</span>
+            <span class="ps-text">Sourcing reliable hardware in Nigeria is expensive, unreliable, and often leads to incompatible or second-rate equipment.</span>
+          </div>
+          <div class="ps-row">
+            <span class="ps-label solution">Solution</span>
+            <span class="ps-text">Procurement advice, vendor relationships, and configuration support for laptops, desktops, servers, and networking gear.</span>
+          </div>
+        </div>
+        <div class="svc-deliverables">
+          <span class="tag tag-green">Laptops / Desktops</span><span class="tag tag-green">Networking Gear</span>
+          <span class="tag tag-green">Configuration</span>
+        </div>
+        <div class="svc-cta"><a href="contact.html" class="btn btn-primary btn-sm">Get Quote</a></div>
+      </div>
+
+      <!-- 6. Graphic Design & Video -->
+      <div class="svc-full-card reveal">
+        <div class="svc-head">
+          <div class="svc-icon-box">🎨</div>
+          <div><h3>Graphic Design & Video Editing</h3></div>
+        </div>
+        <div class="problem-solution">
+          <div class="ps-row">
+            <span class="ps-label problem">Problem</span>
+            <span class="ps-text">Poor visuals and unpolished videos damage credibility before a word is read or heard.</span>
+          </div>
+          <div class="ps-row">
+            <span class="ps-label solution">Solution</span>
+            <span class="ps-text">Professional brand graphics, social media assets, and video editing that look intentional and authoritative.</span>
+          </div>
+        </div>
+        <div class="svc-deliverables">
+          <span class="tag tag-purple">Logos</span><span class="tag tag-purple">Social Media</span>
+          <span class="tag tag-purple">Video Editing</span><span class="tag tag-purple">Flyers</span>
+        </div>
+        <div class="svc-cta"><a href="contact.html" class="btn btn-primary btn-sm">Request Design</a></div>
+      </div>
+
+      <!-- 7. Digital Communication Setup -->
+      <div class="svc-full-card reveal">
+        <div class="svc-head">
+          <div class="svc-icon-box">📱</div>
+          <div><h3>Digital Communication Setup</h3></div>
+        </div>
+        <div class="problem-solution">
+          <div class="ps-row">
+            <span class="ps-label problem">Problem</span>
+            <span class="ps-text">Missed leads, scattered communication channels, and no professional digital presence — customers can't reach you efficiently.</span>
+          </div>
+          <div class="ps-row">
+            <span class="ps-label solution">Solution</span>
+            <span class="ps-text">Set up bulk SMS pipelines, WhatsApp Business systems, and professional email — so every channel works cohesively.</span>
+          </div>
+        </div>
+        <div class="svc-deliverables">
+          <span class="tag tag-blue">Bulk SMS</span><span class="tag tag-blue">WhatsApp Business</span>
+          <span class="tag tag-blue">Email Setup</span>
+        </div>
+        <div class="svc-cta"><a href="contact.html" class="btn btn-primary btn-sm">Request Setup</a></div>
+      </div>
+
+      <!-- 8. Data Management & Digitization -->
+      <div class="svc-full-card reveal">
+        <div class="svc-head">
+          <div class="svc-icon-box">📊</div>
+          <div><h3>Data Management & Digitisation</h3></div>
+        </div>
+        <div class="problem-solution">
+          <div class="ps-row">
+            <span class="ps-label problem">Problem</span>
+            <span class="ps-text">Paper-based or Excel-heavy workflows create errors, delays, and data loss — especially at scale.</span>
+          </div>
+          <div class="ps-row">
+            <span class="ps-label solution">Solution</span>
+            <span class="ps-text">Custom data management systems and digitisation workflows — built and deployed, not just advised on.</span>
+          </div>
+        </div>
+        <div class="svc-deliverables">
+          <span class="tag tag-amber">Spreadsheet Systems</span><span class="tag tag-amber">Web Apps</span>
+          <span class="tag tag-amber">Data Migration</span>
+        </div>
+        <div class="svc-cta"><a href="contact.html" class="btn btn-primary btn-sm">Digitise My Data</a></div>
+      </div>
+
+      <!-- 9. Data Analysis -->
+      <div class="svc-full-card reveal">
+        <div class="svc-head">
+          <div class="svc-icon-box">📈</div>
+          <div><h3>Data Analysis & Reporting</h3></div>
+        </div>
+        <div class="problem-solution">
+          <div class="ps-row">
+            <span class="ps-label problem">Problem</span>
+            <span class="ps-text">You have data but no clear picture of what it's telling you — decisions are made on instinct, not insight.</span>
+          </div>
+          <div class="ps-row">
+            <span class="ps-label solution">Solution</span>
+            <span class="ps-text">Data cleaning, analysis, and visualisation — dashboards and reports that make complex data immediately actionable.</span>
+          </div>
+        </div>
+        <div class="svc-deliverables">
+          <span class="tag tag-green">Excel / Python</span><span class="tag tag-green">Dashboards</span>
+          <span class="tag tag-green">Security Reports</span>
+        </div>
+        <div class="svc-cta"><a href="contact.html" class="btn btn-primary btn-sm">Analyse My Data</a></div>
+      </div>
+
+      <!-- 10. Virtual Assistant -->
+      <div class="svc-full-card reveal">
+        <div class="svc-head">
+          <div class="svc-icon-box">🤝</div>
+          <div><h3>Virtual Assistant Services</h3></div>
+        </div>
+        <div class="problem-solution">
+          <div class="ps-row">
+            <span class="ps-label problem">Problem</span>
+            <span class="ps-text">Administrative overload pulls you away from high-value work — research, scheduling, and data entry consume your day.</span>
+          </div>
+          <div class="ps-row">
+            <span class="ps-label solution">Solution</span>
+            <span class="ps-text">Remote VA support with a tech-first mindset — research, data entry, scheduling, and document management handled efficiently.</span>
+          </div>
+        </div>
+        <div class="svc-deliverables">
+          <span class="tag tag-blue">Research</span><span class="tag tag-blue">Data Entry</span>
+          <span class="tag tag-blue">Scheduling</span><span class="tag tag-blue">Doc Management</span>
+        </div>
+        <div class="svc-cta"><a href="contact.html" class="btn btn-primary btn-sm">Hire VA</a></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="container">
+    <div class="section-label reveal">Investment</div>
+    <h2 class="reveal">Pricing</h2>
+    <p class="reveal" style="max-width:500px;">All prices in USD. Custom scopes available — contact me for a tailored quote.</p>
+    <div class="pricing-grid">
+      <div class="price-card reveal">
+        <h3>Starter</h3>
+        <div class="price-amount">$50<span style="font-size:1rem;color:var(--text-3)">+</span></div>
+        <div class="price-period">One-time / project</div>
+        <ul class="price-items">
+          <li>Basic website (5 pages)</li>
+          <li>IT support session (2 hours)</li>
+          <li>Social media graphics (5 designs)</li>
+          <li>Basic security assessment</li>
+        </ul>
+        <a href="contact.html" class="btn btn-outline" style="width:100%;justify-content:center;">Get Started</a>
+      </div>
+      <div class="price-card featured reveal">
+        <div class="price-badge">MOST POPULAR</div>
+        <h3>Professional</h3>
+        <div class="price-amount">$150<span style="font-size:1rem;color:var(--text-3)">+</span></div>
+        <div class="price-period">Per project</div>
+        <ul class="price-items">
+          <li>Full website (10+ pages)</li>
+          <li>Cybersecurity consultation</li>
+          <li>Basic VAPT with report</li>
+          <li>Data management system</li>
+          <li>Priority 48-hour turnaround</li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary" style="width:100%;justify-content:center;">Request Quote</a>
+      </div>
+      <div class="price-card reveal">
+        <h3>Enterprise</h3>
+        <div class="price-amount">Custom</div>
+        <div class="price-period">Retainer / contract</div>
+        <ul class="price-items">
+          <li>Full penetration test</li>
+          <li>SOC-as-a-service support</li>
+          <li>School digital transformation</li>
+          <li>Ongoing IT management</li>
+          <li>SLA-backed support</li>
+        </ul>
+        <a href="contact.html" class="btn btn-outline" style="width:100%;justify-content:center;">Let's Talk</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOR SCHOOLS CALLOUT -->
+<section style="padding-top:0;padding-bottom:60px;">
+  <div class="container">
+    <div class="card reveal" style="display:flex;gap:32px;align-items:center;flex-wrap:wrap;">
+      <div style="font-size:3rem;">🏫</div>
+      <div style="flex:1;">
+        <h3>Digital Solutions for Schools</h3>
+        <p>LMS deployment · ICT curriculum · Teacher training · Digital record systems — complete school digitisation packages.</p>
+      </div>
+      <a href="for-schools.html" class="btn btn-primary" style="flex-shrink:0;">View School Solutions →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="nav-logo-text">Cyber<span style="color:var(--primary)">Nate</span></span>
+        <p>SOC Analyst · DFIR Specialist · IT Consultant</p>
+        <div class="footer-socials">
+          <a href="https://linkedin.com/in/nathaniel-ogunjobi" target="_blank" class="social-link"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="https://github.com/Cyber-Nate" target="_blank" class="social-link"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg></a>
+          <a href="https://web.facebook.com/cyber.nate.cybot/" target="_blank" class="social-link"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a href="https://youtube.com/@CyberNation01" target="_blank" class="social-link"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#0f172a"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Navigate</h4><a href="index.html">Home</a><a href="about.html">About</a><a href="portfolio.html">Portfolio</a><a href="projects.html">Projects</a><a href="certifications.html">Certifications</a></div>
+      <div class="footer-col"><h4>Resources</h4><a href="academy.html">Academy</a><a href="blog.html">Blog</a><a href="for-schools.html">For Schools</a><a href="assets/mutacryptor_ti_report.pdf" download>TI Report</a></div>
+      <div class="footer-col"><h4>Contact</h4><a href="mailto:cybernate22@gmail.com">cybernate22@gmail.com</a><a href="https://wa.me/2347038171631" target="_blank">WhatsApp</a><a href="contact.html">Hire Me</a></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Nathaniel T.O — Cyber Nate. All rights reserved.</span>
+      <span>Lagos, Nigeria · Remote Worldwide</span>
+    </div>
+  </div>
+</footer>
+<a href="https://wa.me/2347038171631" target="_blank" class="wa-float"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+<div class="hire-strip">
+  <p>🟢 <span>Open to Remote SOC Roles</span> · Relocation Ready (AU · CA · UAE · NZ)</p>
+  <a href="mailto:nathanieltemitope.o@gmail.com">nathanieltemitope.o@gmail.com →</a>
+</div>
+<script src="shared.js"></script>
+</body>
+</html>

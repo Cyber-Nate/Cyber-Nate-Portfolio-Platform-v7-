@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MutaCryptor Scam Network — TI Report v2 | Cyber Nate</title>
+<link rel="stylesheet" href="../shared.css" />
+<link rel="stylesheet" href="case-base.css" />
+</head>
+<body>
+<nav class="navbar">
+  <a href="../index.html" class="nav-logo"><img src="../assets/logo.png" alt="" onerror="this.style.display='none'"><span class="nav-logo-text">Cyber<span>Nate</span></span></a>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li><li><a href="../portfolio.html">Portfolio</a></li>
+    <li><a href="../projects.html" class="active">Projects</a></li><li><a href="../blog.html">Blog</a></li>
+    <li><a href="../contact.html" class="btn-hire">Hire Me</a></li>
+  </ul>
+  <button class="hamburger"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu">
+  <a href="../index.html">Home</a><a href="../portfolio.html">Portfolio</a>
+  <a href="../projects.html">Projects</a><a href="../contact.html">Hire Me</a>
+</div>
+
+<div class="container">
+  <div class="case-hero reveal">
+    <a href="../projects.html" style="font-size:0.85rem;color:var(--primary);display:inline-flex;align-items:center;gap:6px;margin-bottom:20px;">← Back to Projects</a>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px;">
+      <span class="tag tag-red">TLP:WHITE</span>
+      <span class="tag tag-amber">Threat Intelligence</span>
+      <span class="tag tag-blue">OSINT</span>
+      <span class="tag tag-purple">Crypto Fraud</span>
+    </div>
+    <h1>MutaCryptor Scam Network<br>Threat Intelligence Report v2</h1>
+    <p style="font-size:1rem;color:var(--text-2);max-width:640px;margin-top:12px;">Correlating Zorvyn FinTech / VRV Security / MutaEngine across an 8-phase attack chain with 18+ IOCs and MITRE ATT&CK TTPs. A deep-dive investigation into a sophisticated Nigerian-operated cryptocurrency fraud network.</p>
+    <div class="case-meta">
+      <span>📅 Released: April 18, 2026</span>
+      <span>👤 Analyst: Nathaniel T.O</span>
+      <span>📊 Version: 2.0</span>
+      <span>🔓 Classification: TLP:WHITE</span>
+    </div>
+    <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;">
+      <a href="../assets/mutacryptor_ti_report.pdf" class="btn btn-primary" download>Download PDF Report</a>
+      <a href="../contact.html" class="btn btn-outline btn-sm">Discuss Findings</a>
+    </div>
+  </div>
+
+  <div class="case-layout">
+    <div class="case-body reveal">
+
+      <h2 id="executive">🔍 Detection Logic</h2>
+      <p>The investigation originated from a pattern of suspicious social media accounts advertising fraudulent cryptocurrency investment schemes under the brand names <strong>Zorvyn FinTech</strong> and <strong>VRV Security</strong>. Cross-referencing the infrastructure revealed a shared backend engine — internally branded <strong>MutaEngine</strong> — responsible for victim onboarding, fake dashboard generation, and withdrawal fraud.</p>
+      <p>Detection was initiated through passive OSINT collection: domain registration patterns, SSL certificate metadata, social media account creation timestamps, and reused UI components across three brand identities.</p>
+      <div class="callout callout-amber">
+        <h4>⚠ Key Detection Signal</h4>
+        <p>Identical React component fingerprints across three separate domains — indicative of a shared codebase deployed under different brand identities to avoid platform takedowns.</p>
+      </div>
+
+      <h2 id="reasoning">🧠 Analyst Reasoning</h2>
+      <p>The actor(s) behind MutaCryptor demonstrate a level of operational sophistication uncommon in Nigerian-origin fraud schemes: multi-brand deployment, coordinated social media presence, SEO-optimised landing pages, and a fake dashboard system designed to delay victim awareness of fraud.</p>
+      <p>The choice to operate across three brands simultaneously — with staggered launch dates — indicates a deliberate strategy to maintain continuity of revenue if one brand is reported and removed. This is consistent with a small, technically capable team rather than a single operator.</p>
+      <div class="callout callout-blue">
+        <h4>🧠 Analyst Assessment</h4>
+        <p>Confidence level HIGH that Zorvyn FinTech, VRV Security, and MutaEngine are operated by the same threat actor or closely coordinated group, based on shared infrastructure, code reuse, and overlapping social media account creation patterns.</p>
+      </div>
+
+      <h2 id="timeline">📊 Attack Timeline — 8 Phases</h2>
+      <div class="timeline-visual">
+        <div class="tl-step"><div class="tl-time">Phase 1</div><div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div><div class="tl-content"><strong>Brand Infrastructure Setup</strong><span>Domain registration, SSL procurement, React-based fake dashboard deployment</span></div></div>
+        <div class="tl-step"><div class="tl-time">Phase 2</div><div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div><div class="tl-content"><strong>Social Media Seeding</strong><span>Facebook, Instagram, WhatsApp — coordinated fake testimonials and sponsored posts</span></div></div>
+        <div class="tl-step"><div class="tl-time">Phase 3</div><div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div><div class="tl-content"><strong>Victim Recruitment</strong><span>DM campaigns targeting job seekers and investment-interested users</span></div></div>
+        <div class="tl-step"><div class="tl-time">Phase 4</div><div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div><div class="tl-content"><strong>KYC Harvesting</strong><span>Fake registration process collecting BVN, NIN, phone numbers, and bank details</span></div></div>
+        <div class="tl-step"><div class="tl-time">Phase 5</div><div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div><div class="tl-content"><strong>Investment Illusion</strong><span>Fake dashboard showing fabricated returns to build victim confidence</span></div></div>
+        <div class="tl-step"><div class="tl-time">Phase 6</div><div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div><div class="tl-content"><strong>Escalation Pressure</strong><span>WhatsApp agents pressure victims to increase deposits citing "bonuses" and "withdrawal fees"</span></div></div>
+        <div class="tl-step"><div class="tl-time">Phase 7</div><div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div><div class="tl-content"><strong>Withdrawal Fraud</strong><span>Victims denied withdrawals — demands for additional "tax clearance" or "verification fees"</span></div></div>
+        <div class="tl-step"><div class="tl-time">Phase 8</div><div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div><div class="tl-content"><strong>Exit & Rebrand</strong><span>Domain abandoned, social accounts deleted, infrastructure redeployed under new brand</span></div></div>
+      </div>
+
+      <h2 id="iocs">📌 Indicators of Compromise (Selected)</h2>
+      <table class="ioc-table">
+        <thead><tr><th>Type</th><th>Indicator</th><th>Confidence</th></tr></thead>
+        <tbody>
+          <tr><td>Domain</td><td>zorvynfintech[.]com</td><td>HIGH</td></tr>
+          <tr><td>Domain</td><td>vrvsecurity[.]net</td><td>HIGH</td></tr>
+          <tr><td>Domain</td><td>mutaengine[.]io</td><td>HIGH</td></tr>
+          <tr><td>IP</td><td>196.12.XX.XX (redacted — TLP:WHITE)</td><td>MEDIUM</td></tr>
+          <tr><td>Email</td><td>support@zorvynfintech[.]com</td><td>HIGH</td></tr>
+          <tr><td>WhatsApp</td><td>+234 (multiple accounts — rotated)</td><td>MEDIUM</td></tr>
+          <tr><td>Social</td><td>@ZorvynFintech (Instagram/Facebook)</td><td>HIGH</td></tr>
+          <tr><td>SSL Cert</td><td>Shared Let's Encrypt — same issuance window</td><td>MEDIUM</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:0.82rem;color:var(--text-3);">Full IOC list with unhashed indicators available in the PDF report (TLP:WHITE — unrestricted distribution).</p>
+
+      <h2 id="mitre">🎯 MITRE ATT&CK Mapping</h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <div class="callout callout-red"><h4>T1566 — Phishing</h4><p>Social media DM campaigns with fraudulent investment offers</p></div>
+        <div class="callout callout-red"><h4>T1598 — Phishing for Information</h4><p>Fake KYC forms collecting BVN, NIN, bank details</p></div>
+        <div class="callout callout-amber"><h4>T1585 — Establish Accounts</h4><p>Multiple coordinated fake brand accounts across platforms</p></div>
+        <div class="callout callout-amber"><h4>T1584 — Compromise Infrastructure</h4><p>Hosting rotation to evade platform takedown</p></div>
+        <div class="callout callout-blue"><h4>T1656 — Impersonation</h4><p>Fake "financial services" branding with fabricated regulatory claims</p></div>
+        <div class="callout callout-blue"><h4>T1583 — Acquire Infrastructure</h4><p>Bulk domain registration with staggered launch dates</p></div>
+      </div>
+
+      <h2 id="mitigation">🛡️ Mitigation Strategy</h2>
+      <div class="callout callout-green">
+        <h4>✅ Recommended Actions</h4>
+        <p>For individuals: verify investment platforms on SEC Nigeria's registered entities list before depositing. Any platform requesting "withdrawal fees" or "tax clearance payments" before releasing funds is operating fraudulently.</p>
+      </div>
+      <ul>
+        <li>Report domains to NITDA and CAC if the platform claims Nigerian registration</li>
+        <li>Submit IOCs to EFCC cybercrime unit for further investigation</li>
+        <li>Block listed domains at DNS/firewall level within enterprise environments</li>
+        <li>Educate staff on crypto investment fraud patterns — particularly the "fake returns dashboard" vector</li>
+        <li>Monitor for rebranded infrastructure using shared SSL certificate metadata and React component fingerprints</li>
+      </ul>
+
+      <div class="case-nav">
+        <a href="../projects.html">← Back to All Projects</a>
+        <a href="case-ad-attack.html">Next Case: AD Compromise Chain →</a>
+      </div>
+    </div>
+
+    <div class="sidebar reveal">
+      <div class="sidebar-toc">
+        <h4>Contents</h4>
+        <a href="#executive">Detection Logic</a>
+        <a href="#reasoning">Analyst Reasoning</a>
+        <a href="#timeline">Attack Timeline</a>
+        <a href="#iocs">IOCs</a>
+        <a href="#mitre">MITRE Mapping</a>
+        <a href="#mitigation">Mitigation</a>
+      </div>
+      <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px;">
+        <div style="font-size:0.78rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-3);margin-bottom:12px;">Report Details</div>
+        <div style="font-size:0.85rem;color:var(--text-2);line-height:2;">
+          <div><strong>Classification:</strong> TLP:WHITE</div>
+          <div><strong>Version:</strong> 2.0</div>
+          <div><strong>Date:</strong> April 18, 2026</div>
+          <div><strong>Analyst:</strong> Nathaniel T.O</div>
+          <div><strong>IOCs:</strong> 18+</div>
+          <div><strong>MITRE TTPs:</strong> 6</div>
+        </div>
+        <a href="../assets/mutacryptor_ti_report.pdf" class="btn btn-primary btn-sm" style="width:100%;justify-content:center;margin-top:16px;" download>Download PDF</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><span class="nav-logo-text">Cyber<span style="color:var(--primary)">Nate</span></span><p>SOC Analyst · DFIR Specialist · IT Consultant</p></div>
+      <div class="footer-col"><h4>Navigate</h4><a href="../index.html">Home</a><a href="../portfolio.html">Portfolio</a><a href="../projects.html">Projects</a><a href="../certifications.html">Certs</a></div>
+      <div class="footer-col"><h4>Case Studies</h4><a href="case-phishing.html">Phishing IR</a><a href="case-usb-malware.html">USB Malware</a><a href="case-vapt.html">VAPT</a><a href="case-ad-attack.html">AD Attack</a></div>
+      <div class="footer-col"><h4>Contact</h4><a href="mailto:cybernate22@gmail.com">cybernate22@gmail.com</a><a href="https://wa.me/2347038171631">WhatsApp</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Nathaniel T.O — Cyber Nate.</span></div>
+  </div>
+</footer>
+<a href="https://wa.me/2347038171631" target="_blank" class="wa-float"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+<script src="../shared.js"></script>
+</body>
+</html>

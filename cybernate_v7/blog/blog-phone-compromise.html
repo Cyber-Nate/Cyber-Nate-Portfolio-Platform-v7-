@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title id="doc-title">Blog | Cyber Nate</title>
+<link rel="stylesheet" href="../shared.css"/>
+<style>
+.blog-article { max-width: 760px; margin: 0 auto; padding: 140px 0 80px; }
+.blog-article h1 { margin-bottom: 16px; }
+.article-meta { display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:40px;padding-bottom:32px;border-bottom:1px solid var(--border); }
+.article-meta span { font-size:0.82rem;color:var(--text-3); }
+.article-body h2 { font-size:1.4rem;margin:40px 0 16px;padding-top:32px;border-top:1px solid var(--border); }
+.article-body h2:first-child { border-top:none;padding-top:0;margin-top:0; }
+.article-body p { margin-bottom:16px;line-height:1.8; }
+.article-body ul { padding-left:22px;margin-bottom:16px; }
+.article-body ul li { color:var(--text-2);margin-bottom:10px;line-height:1.7; }
+.article-cta { background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px;margin-top:60px;text-align:center; }
+.article-cta h3 { margin-bottom:8px; }
+.article-cta p { margin-bottom:20px; }
+.callout{padding:20px 24px;border-radius:10px;margin:24px 0;}
+.callout-blue{background:rgba(59,130,246,0.08);border-left:3px solid #3b82f6;}
+.callout-amber{background:rgba(245,158,11,0.08);border-left:3px solid #f59e0b;}
+.callout-green{background:rgba(34,197,94,0.08);border-left:3px solid #22c55e;}
+.callout h4{font-size:0.83rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;}
+.callout-blue h4{color:#60a5fa;}.callout-amber h4{color:#fbbf24;}.callout-green h4{color:#4ade80;}
+.callout p{margin:0;font-size:0.92rem;}
+</style>
+</head>
+<body>
+<nav class="navbar">
+  <a href="../index.html" class="nav-logo"><img src="../assets/logo.png" alt="" onerror="this.style.display='none'"><span class="nav-logo-text">Cyber<span>Nate</span></span></a>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li><li><a href="../blog.html" class="active">Blog</a></li>
+    <li><a href="../projects.html">Projects</a></li><li><a href="../contact.html" class="btn-hire">Hire Me</a></li>
+  </ul>
+  <button class="hamburger"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu"><a href="../index.html">Home</a><a href="../blog.html">Blog</a><a href="../projects.html">Projects</a><a href="../contact.html">Hire Me</a></div>
+
+<div class="container">
+  <div class="blog-article">
+    <a href="../blog.html" style="font-size:0.85rem;color:var(--primary);display:inline-flex;gap:6px;margin-bottom:24px;">← Back to Blog</a>
+    <div id="tag-row" style="display:flex;gap:8px;margin-bottom:16px;"></div>
+    <h1 id="article-title"></h1>
+    <div class="article-meta">
+      <span id="article-date"></span>
+      <span>✍️ Nathaniel T.O — Cyber Nate</span>
+      <span id="article-read"></span>
+    </div>
+    <div class="article-body" id="article-body"></div>
+    <div class="article-cta reveal">
+      <h3>Found this useful?</h3>
+      <p>Subscribe to the Cyber Nate newsletter or join the Academy for hands-on training.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <a href="https://wa.me/2347038171631?text=Hi!%20I%20read%20your%20blog%20and%20want%20to%20learn%20more." target="_blank" class="btn btn-accent btn-sm">Join via WhatsApp</a>
+        <a href="../academy.html" class="btn btn-outline btn-sm">View Academy →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer><div class="container"><div class="footer-grid">
+  <div class="footer-brand"><span class="nav-logo-text">Cyber<span style="color:var(--primary)">Nate</span></span></div>
+  <div class="footer-col"><h4>Navigate</h4><a href="../index.html">Home</a><a href="../blog.html">Blog</a><a href="../academy.html">Academy</a><a href="../contact.html">Contact</a></div>
+  <div class="footer-col"><h4>Latest Posts</h4><a href="blog-soc-career.html">Break Into Cybersec</a><a href="blog-phishing-investigation.html">Investigate Phishing</a><a href="blog-osint.html">OSINT Techniques</a></div>
+  <div class="footer-col"><h4>Contact</h4><a href="mailto:cybernate22@gmail.com">cybernate22@gmail.com</a><a href="https://wa.me/2347038171631">WhatsApp</a></div>
+</div><div class="footer-bottom"><span>© 2026 Nathaniel T.O</span></div></div></footer>
+<a href="https://wa.me/2347038171631" target="_blank" class="wa-float"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+<div class="hire-strip"><p>🟢 <span>Open to Remote SOC Roles</span></p><a href="mailto:nathanieltemitope.o@gmail.com">nathanieltemitope.o@gmail.com →</a></div>
+<script src="../shared.js"></script>
+<script>
+const articles = {
+  'blog-phishing-investigation': {
+    title: 'How I Investigate a Phishing Email — Step by Step',
+    tag: '<span class="tag tag-amber">Phishing</span>', date: 'March 2026', read: '8 min read',
+    body: `<h2>Why Phishing Still Works in 2026</h2><p>Every year the security industry declares phishing dead. Every year it accounts for over 80% of initial access in data breaches. I investigate phishing alerts weekly — here's exactly how I approach each one.</p>
+    <h2>Step 1: Don't Click Anything Yet</h2><p>First instinct is wrong. Before touching any link or attachment, open the email in a safe environment — raw message source view, or forward to a sandbox email account you control. Your goal is to gather intelligence before interacting with attacker infrastructure.</p>
+    <h2>Step 2: Header Analysis</h2><p>Copy the raw email headers and paste them into a header analyser (mxtoolbox.com/EmailHeaders or Google Admin Toolbox). You're looking for: SPF/DKIM/DMARC results, the actual sending IP vs the claimed From domain, and any received-from hops that reveal infrastructure.</p>
+    <div class="callout callout-blue"><h4>📧 Key Header Fields</h4><p>X-Originating-IP, Authentication-Results, Received chain — these tell you more about the email's actual origin than the display name ever will.</p></div>
+    <h2>Step 3: URL Analysis</h2><p>Extract every URL from the email body. Do NOT click — use urlscan.io, VirusTotal, or urlvoid to submit for sandboxed rendering. What you're looking for: lookalike domains (paypa1.com, m1crosoft.com), recently registered domains, redirect chains, and credential harvesting page templates.</p>
+    <h2>Step 4: Attachment Analysis</h2><p>If there's an attachment, submit the SHA256 hash to VirusTotal first. If clean, open in a sandboxed VM (Remnux, ANY.RUN, or Cuckoo Sandbox). Never open on your host machine. Watch for: macro execution, PowerShell spawning, outbound network connections.</p>
+    <h2>Step 5: IOC Extraction & Documentation</h2><p>Document everything: sending IP, sending domain, redirect URLs, final destination URL, attachment hashes, any contacted IPs/domains from sandbox analysis. These become your IOCs for blocking and for the SIEM alert update.</p>
+    <h2>Step 6: Scope Assessment</h2><p>Query your SIEM: has this link been clicked? Has this attachment been opened? How many users received the same email? This determines whether you have an alert or an incident.</p>
+    <div class="callout callout-amber"><h4>⚠ Common Mistake</h4><p>Analysts close a phishing alert after finding the email looks malicious. The real question is: did anyone click it? Always check before closing.</p></div>
+    <h2>Tools I Use Every Time</h2><ul><li>MXToolbox — email header analysis</li><li>urlscan.io — URL sandbox</li><li>VirusTotal — file and URL reputation</li><li>ANY.RUN — interactive sandbox for attachments</li><li>Phishtank — known phishing URL database</li><li>WHOIS / SecurityTrails — domain investigation</li></ul>`
+  },
+  'blog-soc-career': {
+    title: 'How to Break Into Cybersecurity from Nigeria in 2026',
+    tag: '<span class="tag tag-blue">Career</span>', date: 'March 2026', read: '12 min read',
+    body: `<h2>The Honest Reality First</h2><p>Most "how to get into cybersecurity" guides are written by people in the US or UK talking about US/UK hiring. I'm a Lagos-based SOC analyst who's built a career and is now pursuing international remote roles. This guide is for Nigerians — including the parts nobody else will tell you.</p>
+    <h2>The Starting Point: Stop Waiting for a Degree</h2><p>A Computer Science degree helps but is not required for cybersecurity. What employers actually look for: demonstrated skills, certifications, and a portfolio of real work. I have a BSc in Computer Science from NOUN — but the degree opened fewer doors than my CBTP certification and my published investigation reports.</p>
+    <h2>Phase 1: Build the Foundation (Months 1–3)</h2><p>Start with the free stuff — and there's a lot of it. TryHackMe's SOC Level 1 path, Hack The Box Academy fundamentals, MITRE ATT&CK framework self-study, and Cisco's free Introduction to Cybersecurity course. Your goal in Phase 1 is conceptual understanding, not job readiness.</p>
+    <div class="callout callout-blue"><h4>✅ Phase 1 Checklist</h4><p>Complete TryHackMe SOC Level 1 · Understand the cyber kill chain · Know what SIEM, EDR, and SOAR mean in practice · Set up a home lab (VirtualBox + Kali + Windows VM)</p></div>
+    <h2>Phase 2: Get Your First Cert (Months 3–6)</h2><p>The first certification that matters in Nigeria is CompTIA Security+ or an equivalent. From Nigerian providers, the NexSecure SOC Bootcamp, Red Team Leaders courses (CCEP, CTIGA), and OPSWAT CIP are all credible and verifiable. Avoid certifications that don't have external verification pages — employers will check.</p>
+    <h2>Phase 3: Build a Portfolio (Months 4–8)</h2><p>This is where most Nigerian candidates fail. They collect certifications but have nothing to show. Your portfolio needs: write-up of at least one investigation (even from TryHackMe), a working tool on GitHub, and ideally a public report or blog post demonstrating your thinking. The bar for getting noticed is a visible track record of actually doing the work.</p>
+    <h2>Phase 4: Apply Strategically</h2><p>For Nigerian roles: LinkedIn, Jobberman, MyJobMag for SOC/IT roles. For remote international roles: LinkedIn, Wellfound, Remote.co, and direct applications to companies that list "remote OK" in Africa. Key message: your law enforcement background, government experience, or local threat knowledge is a differentiator internationally — they don't have it, and cyber threats don't stop at borders.</p>
+    <h2>The Certification Stack I Recommend for 2026</h2><ul><li>Start: Cisco CyberOps Associate or CompTIA Security+</li><li>SOC Path: NexSecure Bootcamp → SecOps Group CBTP → HTB CJCA</li><li>DFIR Path: Red Team Leaders CTIGA → CTHIRI → HTB CDSA</li><li>Later: OSCP if you want offensive, GCFE/GCIH if DFIR is your goal</li></ul>`
+  },
+  'blog-osint': {
+    title: 'OSINT Techniques I Use in Real Investigations',
+    tag: '<span class="tag tag-green">OSINT</span>', date: 'April 2026', read: '10 min read',
+    body: `<h2>What OSINT Actually Means in a SOC Context</h2><p>Open Source Intelligence is the collection and analysis of publicly available information. In a SOC context, it's not about stalking people on Facebook — it's about understanding the infrastructure behind a threat actor, validating indicators of compromise, and building a complete picture from scattered public data points.</p>
+    <h2>Domain Intelligence</h2><p>Every investigation starts with domain analysis. My go-to tools: SecurityTrails for historical DNS records (what IP did this domain point to 6 months ago?), WHOIS for registration details (even privacy-protected registrations leak creation dates and registrars), and urlscan.io for rendered screenshots of URLs without touching them.</p>
+    <div class="callout callout-blue"><h4>🔍 Technique: Historical DNS</h4><p>A domain using Cloudflare now may have been pointing to a real origin IP last year. SecurityTrails historical DNS often reveals the actual hosting infrastructure that the threat actor is still using.</p></div>
+    <h2>SSL Certificate Analysis</h2><p>crt.sh is underused. Every SSL certificate is logged publicly — search a domain on crt.sh and you can discover subdomains the operator thought were hidden. More importantly, if two apparently separate domains used the same certificate, they may be operated by the same person.</p>
+    <h2>Social Media Intelligence</h2><p>For fraud investigation specifically: account creation dates (new accounts are suspicious), mutual connections, post timing patterns (bots post on predictable schedules), and reverse image search on profile photos (Google Images, TinEye, Yandex — Yandex is often the most effective for face matching).</p>
+    <h2>Infrastructure Pivoting</h2><p>The most powerful OSINT technique: take one known indicator and pivot to find related infrastructure. Known IP → find other domains pointing to that IP (SecurityTrails, Shodan). Known email → find other registrations using that email (various breach databases). Known domain → find subdomains, certificate siblings, related IPs.</p>
+    <h2>Nigerian Threat-Specific OSINT</h2><p>For Nigerian-origin fraud networks: CAC portal (search.cac.gov.ng) for company registration verification, NCC regulatory database for telecom registrations, and WhatsApp number lookup via Truecaller for agent identity. These are specific to the Nigerian threat landscape and not covered in most OSINT guides.</p>
+    <h2>Tools I Use Daily</h2><ul><li>SecurityTrails — DNS/IP history</li><li>Shodan — internet-connected device search</li><li>crt.sh — SSL certificate transparency logs</li><li>urlscan.io — URL sandbox + screenshot</li><li>Maltego — relationship mapping</li><li>OSINT Framework (osintframework.com) — tool directory</li><li>Yandex Image Search — face recognition OSINT</li></ul>`
+  },
+  'blog-python-security': {
+    title: 'Python for SOC Analysts — What You Actually Need to Know',
+    tag: '<span class="tag tag-green">Python</span>', date: 'April 2026', read: '9 min read',
+    body: `<h2>You Don't Need to Be a Programmer</h2><p>The biggest mistake I see in cybersecurity career advice is treating "learn Python" as if it means "become a software developer." SOC analysts need Python as a force multiplier — to automate repetitive tasks, process log data faster, and build small tools. You need maybe 20% of what a Python course teaches.</p>
+    <h2>The 5 Python Skills That Actually Matter for SOC Work</h2>
+    <h2>1. File I/O and Log Parsing</h2><p>Reading log files, filtering by keyword or regex, writing results to a new file. This alone eliminates hours of manual grep work. Learn: open(), readlines(), re module, CSV module.</p>
+    <h2>2. HTTP Requests</h2><p>Querying threat intel APIs (VirusTotal, Shodan, AbuseIPDB) from the command line. One script that checks 100 IPs against VirusTotal in 30 seconds instead of pasting them one by one. Learn: requests library, JSON parsing, API key handling.</p>
+    <div class="callout callout-green"><h4>✅ Immediate Win</h4><p>Build a script that takes a list of IPs from a text file and queries AbuseIPDB for each one, printing the abuse confidence score. This is useful every single week in a SOC role.</p></div>
+    <h2>3. String Processing and Regex</h2><p>Extracting IPs, domains, hashes, and email addresses from raw text. Parsing firewall logs to pull source IPs. Building quick IOC extractors. The re module is your most-used library in security work.</p>
+    <h2>4. Subprocess and OS Automation</h2><p>Running system commands from Python, automating Nmap scans, chaining tools together. The subprocess module is how you turn a multi-step manual workflow into a repeatable script.</p>
+    <h2>5. Data Structures for Alert Correlation</h2><p>Using dictionaries and sets to count occurrences, deduplicate IOC lists, find intersections between datasets. Basic data science operations applied to security data — no pandas required.</p>
+    <h2>My Real-World Example</h2><p>My Python Info-Gathering Tool (github.com/Cyber-Nate/python-info-gathering-tool) built during the MetBrains Cyber Camp demonstrates all of these skills: subprocess for network commands, requests for OSINT APIs, file output for report generation. Start there if you want a template to build from.</p>
+    <h2>Where to Learn (Free)</h2><ul><li>Python for Everybody — Dr. Chuck (coursera.org/specializations/python) — free to audit</li><li>Automate the Boring Stuff with Python — free online at automatetheboringstuff.com</li><li>TryHackMe Python Basics room — security-focused exercises</li></ul>`
+  },
+  'blog-phone-compromise': {
+    title: 'Signs Your Phone Is Compromised — And What to Do',
+    tag: '<span class="tag tag-purple">Mobile Security</span>', date: 'March 2026', read: '7 min read',
+    body: `<h2>Why I Wrote This</h2><p>I investigated a suspected WhatsApp compromise on a Redmi 14C running HyperOS. The owner noticed unusual behaviour — messages marked as read before they were opened, battery draining faster than normal, and an unfamiliar device appearing in WhatsApp Linked Devices. Here's what I found and how I addressed it.</p>
+    <h2>The Primary Vector — Physical Access</h2><p>Contrary to most sensationalised "phone hacking" stories, the most common compromise vector is physical access. In this case: QR code linking (someone scanned the device's WhatsApp QR while the owner was away) combined with possible stalkerware installed directly on the device.</p>
+    <div class="callout callout-amber"><h4>⚠ Key Finding</h4><p>WhatsApp's Linked Devices feature can be abused entirely without hacking — just 30 seconds of unattended access to a phone. This is the most common "phone hacking" scenario in Nigeria.</p></div>
+    <h2>Forensic Checklist — What to Check First</h2><ul>
+    <li><strong>WhatsApp → Linked Devices:</strong> Any device you don't recognise = active session compromise. Log out immediately.</li>
+    <li><strong>Settings → Apps → Recently Installed:</strong> Any app installed within the suspected compromise timeframe that you don't recognise</li>
+    <li><strong>Settings → Accessibility:</strong> Accessibility permissions are exploited by stalkerware — any app with these permissions that isn't a legitimate accessibility tool is suspicious</li>
+    <li><strong>Settings → Device Admin Apps:</strong> Stalkerware often requests device administrator permissions — check this list carefully</li>
+    <li><strong>Battery Usage:</strong> A background app consuming unusual battery when the phone is idle is a stalkerware indicator</li>
+    <li><strong>Data Usage:</strong> Unusual data consumption, especially overnight, may indicate exfiltration</li>
+    </ul>
+    <h2>What To Do If Compromised</h2><p>If you find evidence of compromise: factory reset the device. Do NOT restore from Google backup — malware can persist through backup restoration. Set up the device fresh. Re-enable WhatsApp and immediately check Linked Devices again. Enable two-step verification on WhatsApp (Settings → Account → Two-step verification).</p>
+    <h2>Prevention Going Forward</h2><ul>
+    <li>Never leave your phone unattended with the screen unlocked — even for seconds</li>
+    <li>Enable screen lock with a strong PIN (not biometric-only — biometrics can be bypassed physically)</li>
+    <li>Regularly audit WhatsApp Linked Devices, Google Account active sessions, and app permissions</li>
+    <li>Enable Google Play Protect and run monthly scans</li>
+    </ul>
+    <h2>Legal Note for Nigeria</h2><p>Unauthorised access to another person's device or accounts is an offence under the Cybercrime (Prohibition, Prevention, etc.) Act 2015, Sections 12 and 24. If you have evidence of a perpetrator, report to the EFCC Cybercrime Unit.</p>`
+  },
+  'blog-blue-vs-red': {
+    title: 'Blue Team vs Red Team — Which Path Is Right for You?',
+    tag: '<span class="tag tag-blue">Career</span>', date: 'February 2026', read: '10 min read',
+    body: `<h2>The Question Everyone Asks</h2><p>"Should I go blue team or red team?" I've been asked this more than any other career question. Having done both — SOC analysis (blue) and penetration testing/red team training (CCEP, CTIGA, CRDFA, CTHIRI) — here's my actual answer.</p>
+    <h2>What Blue Team Actually Means Day-to-Day</h2><p>Blue team work is pattern recognition under pressure. Your day involves: monitoring SIEM dashboards for anomalies, triaging alerts (most will be false positives — that's normal), investigating confirmed incidents with structured methodology, writing IR reports, and tuning detection rules to reduce noise.</p>
+    <p>The misconception is that blue team is "defensive and boring." It isn't. Real SOC work is intellectually demanding — you're reconstructing what an attacker did from fragments of evidence. My MutaCryptor investigation, my AD compromise chain, my USB malware case — these are blue team work. They require offensive knowledge to understand what you're looking at, but the goal is detection and response.</p>
+    <h2>What Red Team Actually Means Day-to-Day</h2><p>Legitimate red team work is structured, authorised, and heavily documented. You're contracted to attack an organisation's defences and report what you find. This includes: scoping and rules of engagement, reconnaissance, exploitation, post-exploitation (lateral movement, data access), and a formal report with remediation recommendations.</p>
+    <div class="callout callout-amber"><h4>⚠ Reality Check</h4><p>Most "red team" junior roles in Nigeria and internationally are actually penetration testing roles — web app VAPT, network testing, social engineering simulations. True adversarial red team operations at scale are senior-level work.</p></div>
+    <h2>Which Pays More?</h2><p>Internationally: senior red team/pentest consultants earn more than SOC analysts at the same experience level. In Nigeria currently: SOC roles are more abundant and more consistently available. Junior pentesters often work freelance or for consultancies with variable income, while SOC analysts have more stable employment options.</p>
+    <h2>My Recommendation</h2><p>Start blue team. Learn how defenders think, how attackers are detected, what logs matter and why. This makes you a significantly better offensive security professional than someone who goes straight to hacking without understanding how detection works. I do both — and my blue team background makes my pentest reports better because I understand what a defender needs to remediate findings.</p>
+    <h2>The Skills That Transfer Both Ways</h2><ul>
+    <li>MITRE ATT&CK framework knowledge — universal</li>
+    <li>Network protocol understanding — essential for both</li>
+    <li>Python/scripting — used in both disciplines differently</li>
+    <li>Log analysis — helps blue team detect, helps red team stay stealthy</li>
+    <li>Report writing — critical for both (no one gets paid without a deliverable)</li>
+    </ul>`
+  },
+  'blog-web-security': {
+    title: 'Top 5 Web Vulnerabilities I Find on Every Pentest',
+    tag: '<span class="tag tag-amber">Web Security</span>', date: 'February 2026', read: '9 min read',
+    body: `<h2>The Same Vulnerabilities Keep Appearing</h2><p>I've run VAPT engagements against multiple web applications. The same five vulnerability classes appear in almost every assessment — because developers keep making the same mistakes. Here's each one, why it keeps appearing, and how to actually fix it.</p>
+    <h2>1. SQL Injection</h2><p>Still. In 2026. SQL injection persists because developers learn to build applications before they learn to secure them, and parameterised queries feel like extra work when you're under deadline pressure.</p>
+    <p>The fix is genuinely simple: use prepared statements and parameterised queries. Never concatenate user input into a SQL string. In PHP: use PDO or MySQLi with bound parameters. In Python: use SQLAlchemy ORM or cursor.execute() with parameter placeholders, never string formatting.</p>
+    <div class="callout callout-amber"><h4>⚠ Why It Matters</h4><p>A single injectable parameter in your search box can expose every row of every table in your database. I demonstrated this in my VAPT report against testphp.vulnweb.com — full database extraction in under 2 minutes with sqlmap.</p></div>
+    <h2>2. Cross-Site Scripting (XSS)</h2><p>XSS exists because applications display user-controlled data without encoding it. Every piece of user input that gets rendered back to a user is a potential XSS vector. The fix: encode output using context-appropriate functions (htmlspecialchars() in PHP, textContent instead of innerHTML in JavaScript) and implement a Content Security Policy header that restricts script execution.</p>
+    <h2>3. Insecure Direct Object References (IDOR)</h2><p>This is the most commonly missed vulnerability in reviews. IDOR means you can change an ID in a URL or API request and access someone else's data. Example: /api/orders/1234 — what happens if you change 1234 to 1235? If you see another user's order, that's IDOR. Fix: implement authorisation checks on every resource access, not just at the session level.</p>
+    <h2>4. Insecure File Upload</h2><p>Applications that accept file uploads and fail to validate file type properly are vulnerable to webshell upload — which leads to remote code execution. A .php file disguised as a .jpg can be uploaded and executed if the server doesn't validate MIME type server-side. Fix: whitelist allowed MIME types, strip executable extensions, rename files on upload, store outside the web root.</p>
+    <h2>5. Broken Authentication</h2><p>Weak session tokens, no account lockout on login, missing MFA for sensitive functions, and session IDs that don't invalidate on logout. These are the mechanisms attackers use to maintain access long after an initial compromise. Fix: use framework-provided session management (don't roll your own), implement lockout after 5 failed attempts, enforce MFA for all admin functions.</p>
+    <h2>The Common Thread</h2><p>Every one of these vulnerabilities has known, well-documented fixes. They persist not because fixes don't exist but because development teams deprioritise security under time pressure. The answer is shifting security left — making security review part of the development process, not an afterthought after deployment.</p>`
+  },
+  'blog-mutacryptor-experience': {
+    title: 'How I Exposed the MutaCryptor Crypto Fraud Network',
+    tag: '<span class="tag tag-red">Investigation</span>', date: 'April 2026', read: '11 min read',
+    body: `<h2>How It Started</h2><p>A community member in a Nigerian tech WhatsApp group shared a screenshot from "Zorvyn FinTech" — a cryptocurrency investment platform promising 15% weekly returns. My immediate reaction: those numbers are impossible. No legitimate investment generates 15% per week. This was a 419 scam adapted for the crypto era.</p>
+    <p>Instead of just warning people and moving on, I decided to investigate properly. I wanted to understand the infrastructure, find the actors, document the attack chain, and produce something that could actually help people identify similar schemes.</p>
+    <h2>Phase 1: OSINT on Zorvyn FinTech</h2><p>I started with the domain. WHOIS showed a privacy-protected registration — typical. But the registration date was 23 days before the earliest social media post I could find about the platform. crt.sh showed SSL certificate issuance on the same day as the domain registration. These two facts together suggested an operation being built and launched deliberately, not an existing business moving online.</p>
+    <div class="callout callout-blue"><h4>🔍 First Pivot</h4><p>urlscan.io scan of the Zorvyn domain revealed the site was built in React with specific component identifiers in the JavaScript bundles. I extracted those identifiers and searched for them across other domains — and found vrvsecurity.net with an identical codebase.</p></div>
+    <h2>Phase 2: Finding the Second Brand</h2><p>VRV Security claimed to be a cybersecurity firm — ironic. But the React component fingerprints matched exactly. Same developer, same codebase, same fake dashboard design just reskinned with different branding. A shared hosting IP (identified via SecurityTrails) confirmed both domains were being served from the same infrastructure.</p>
+    <h2>Phase 3: MutaEngine — the Backend</h2><p>Intercepting network traffic from the fake dashboard (using Burp Suite on a sandboxed test account I created with dummy information) revealed API calls to a third domain: mutaengine.io. This was the shared backend — the actual platform powering both brands. MutaEngine appeared to be the operator's core product, deployed under different brand identities.</p>
+    <h2>Phase 4: Documenting the Attack Chain</h2><p>Having established the infrastructure connection, I walked through the full victim journey: from initial social media contact through KYC data harvesting, fake returns, withdrawal refusal, and eventual disappearance. This became the 8-phase attack chain in the TI Report.</p>
+    <h2>The Report and What Happened</h2><p>I published the MutaCryptor Threat Intelligence Report v2 on April 18, 2026 — TLP:WHITE, meaning freely distributable. Within days, multiple community members had identified themselves as victims of these schemes using the IOCs I published. Several of the social media accounts were reported and removed.</p>
+    <p>This is what threat intelligence is supposed to do: turn individual incidents into shared knowledge that benefits everyone who reads it. That's why I publish my work. Not every analyst does — but every analyst should.</p>
+    <div class="callout callout-green"><h4>✅ Download the Report</h4><p>The full MutaCryptor TI Report v2 is available for free download from my projects page. Share it. That's what TLP:WHITE means.</p></div>`
+  }
+};
+
+const slug = window.location.pathname.split('/').pop().replace('.html','');
+const article = articles[slug];
+if (article) {
+  document.getElementById('doc-title').textContent = article.title + ' | Cyber Nate';
+  document.getElementById('article-title').textContent = article.title;
+  document.getElementById('article-date').textContent = '📅 ' + article.date;
+  document.getElementById('article-read').textContent = '⏱ ' + article.read;
+  document.getElementById('tag-row').innerHTML = article.tag;
+  document.getElementById('article-body').innerHTML = article.body;
+}
+</script>
+</body></html>

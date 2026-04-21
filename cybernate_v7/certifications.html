@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Certifications — Cyber Nate</title>
+<link rel="stylesheet" href="shared.css" />
+<style>
+.page-hero { padding: 140px 0 60px; }
+.certs-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 32px; }
+.cert-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); padding: 22px;
+  transition: var(--transition);
+}
+.cert-card:hover { border-color: var(--border-hover); transform: translateY(-4px); }
+.cert-issuer { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-3); margin-bottom: 6px; }
+.cert-name { font-family: var(--font-display); font-size: 1rem; font-weight: 600; margin-bottom: 8px; }
+.cert-meta { font-size: 0.8rem; color: var(--text-3); }
+.cert-score { font-size: 0.82rem; font-weight: 700; color: var(--accent); margin-top: 6px; }
+.in-progress { opacity: 0.75; border-style: dashed; }
+.cert-section-title { font-family: var(--font-display); font-size: 1.1rem; font-weight: 600; color: var(--text-3); margin: 40px 0 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+.membership-block {
+  background: linear-gradient(135deg,rgba(59,130,246,0.08),transparent);
+  border: 1px solid rgba(59,130,246,0.25); border-radius: var(--radius);
+  padding: 32px; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center;
+  margin-top: 40px;
+}
+.award-block {
+  background: linear-gradient(135deg,rgba(245,158,11,0.08),transparent);
+  border: 1px solid rgba(245,158,11,0.3); border-radius: var(--radius);
+  padding: 28px; display: flex; gap: 20px; align-items: center;
+  margin-top: 20px;
+}
+@media(max-width:768px){ .certs-grid{grid-template-columns:1fr 1fr;} .membership-block{grid-template-columns:1fr;} }
+@media(max-width:480px){ .certs-grid{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+<nav class="navbar">
+  <a href="index.html" class="nav-logo"><img src="assets/logo.png" alt="" onerror="this.style.display='none'"><span class="nav-logo-text">Cyber<span>Nate</span></span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li><li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="projects.html">Projects</a></li><li><a href="certifications.html" class="active">Certs</a></li>
+    <li><a href="academy.html">Academy</a></li><li><a href="blog.html">Blog</a></li>
+    <li><a href="contact.html" class="btn-hire">Hire Me</a></li>
+  </ul>
+  <button class="hamburger"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu">
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a>
+  <a href="portfolio.html">Portfolio</a><a href="projects.html">Projects</a>
+  <a href="certifications.html">Certifications</a><a href="academy.html">Academy</a>
+  <a href="blog.html">Blog</a><a href="contact.html">Contact / Hire Me</a>
+</div>
+
+<div class="container">
+  <div class="page-hero reveal">
+    <div class="section-label">Credentials</div>
+    <h1>Certifications & Memberships</h1>
+    <p>A growing portfolio of credentials across defensive security, red teaming, digital forensics, and IT — all earned, none bought.</p>
+  </div>
+
+  <!-- MEMBERSHIP -->
+  <div class="membership-block reveal">
+    <div>
+      <div class="section-label" style="margin-bottom:8px;">Professional Membership</div>
+      <h2 style="margin-bottom:8px;">AMICDFA</h2>
+      <p>Associate Member — International Cyber Defense & Forensics Association</p>
+      <p style="margin-top:8px;font-size:0.85rem;color:var(--text-3);">ID: ICDFA-2026-00236 · Cert No: ICDFA/CERT/2026/00236 · Valid: Mar 22, 2026 – Mar 22, 2027</p>
+      <p style="font-size:0.85rem;color:var(--text-3);">Post-nominals: <strong style="color:var(--primary)">AMICDFA</strong> · Editorial Board Peer Reviewer (IJCDF) — Application Submitted</p>
+    </div>
+    <div style="text-align:center;">
+      <div style="font-size:4rem;">🏛️</div>
+      <span class="tag tag-blue" style="margin-top:8px;display:inline-block;">Active 2026</span>
+    </div>
+  </div>
+
+  <!-- AWARD -->
+  <div class="award-block reveal">
+    <div style="font-size:2.5rem;">🏆</div>
+    <div>
+      <h3>Week 5 Technical Precision Award</h3>
+      <p>Red Team Leaders × 0xDelta Research — Active Directory Compromise Chain, Pass-the-Hash Investigation</p>
+      <p style="font-size:0.82rem;color:var(--text-3);margin-top:6px;">March 2026 — Awarded for the highest-quality SOC investigation submission of the cohort</p>
+    </div>
+  </div>
+
+  <!-- COMPLETED CERTS -->
+  <div class="cert-section-title">✅ Completed Certifications</div>
+  <div class="certs-grid">
+    <div class="cert-card reveal">
+      <div class="cert-issuer">SecOps Group</div>
+      <div class="cert-name">CBTP — Certified Blue Team Professional</div>
+      <div class="cert-score">Score: 93%</div>
+      <div class="cert-meta">March 6, 2026</div>
+    </div>
+    <div class="cert-card reveal">
+      <div class="cert-issuer">Red Team Leaders</div>
+      <div class="cert-name">CCEP — Certified Cyber Endpoint Professional</div>
+      <div class="cert-score">Score: 98%</div>
+      <div class="cert-meta">November 2025</div>
+    </div>
+    <div class="cert-card reveal">
+      <div class="cert-issuer">Red Team Leaders</div>
+      <div class="cert-name">CTIGA — Cyber Threat Intel & Group Analysis</div>
+      <div class="cert-score">Score: 90%</div>
+      <div class="cert-meta">2025</div>
+    </div>
+    <div class="cert-card reveal">
+      <div class="cert-issuer">OPSWAT Academy</div>
+      <div class="cert-name">CIP — Critical Infrastructure Protection</div>
+      <div class="cert-meta">2025</div>
+    </div>
+    <div class="cert-card reveal">
+      <div class="cert-issuer">FGLEA / NDPC</div>
+      <div class="cert-name">CITF — OSINT & Digital Forensics</div>
+      <div class="cert-meta">August 2025</div>
+    </div>
+    <div class="cert-card reveal">
+      <div class="cert-issuer">NexSecure Cybersecurity</div>
+      <div class="cert-name">SOC Bootcamp Certificate</div>
+      <div class="cert-meta">CERT-CFD6EDBE · March 31, 2026</div>
+    </div>
+    <div class="cert-card reveal">
+      <div class="cert-issuer">MetBrains Academy</div>
+      <div class="cert-name">7-Day Cyber Camp — Certificate of Recognition</div>
+      <div class="cert-meta">April 2026 · Prof. Dimple Chauhan</div>
+    </div>
+    <div class="cert-card reveal">
+      <div class="cert-issuer">ICDFA</div>
+      <div class="cert-name">AMICDFA — Associate Membership</div>
+      <div class="cert-meta">March 22, 2026 — March 22, 2027</div>
+    </div>
+  </div>
+
+  <!-- IN PROGRESS -->
+  <div class="cert-section-title">⏳ In Progress</div>
+  <div class="certs-grid">
+    <div class="cert-card in-progress reveal">
+      <div class="cert-issuer">Red Team Leaders</div>
+      <div class="cert-name">CRDFA — Certified Red Team Defense Analyst</div>
+      <div class="cert-meta">Won via 100% voucher — Week 5 Challenge</div>
+    </div>
+    <div class="cert-card in-progress reveal">
+      <div class="cert-issuer">Red Team Leaders</div>
+      <div class="cert-name">CTHIRI — Cyber Threat Hunting & IR</div>
+      <div class="cert-meta">Purchased March 2026</div>
+    </div>
+    <div class="cert-card in-progress reveal">
+      <div class="cert-issuer">Hack The Box</div>
+      <div class="cert-name">CJCA — Junior Cybersecurity Analyst</div>
+      <div class="cert-meta">In Progress 2026</div>
+    </div>
+    <div class="cert-card in-progress reveal">
+      <div class="cert-issuer">IBM</div>
+      <div class="cert-name">Cybersecurity Analyst Professional Certificate</div>
+      <div class="cert-meta">In Progress 2026</div>
+    </div>
+    <div class="cert-card in-progress reveal">
+      <div class="cert-issuer">Google</div>
+      <div class="cert-name">SecOps Fundamentals</div>
+      <div class="cert-meta">In Progress 2026</div>
+    </div>
+    <div class="cert-card in-progress reveal">
+      <div class="cert-issuer">Huawei / Greenfield University</div>
+      <div class="cert-name">HCIA-Security 2026</div>
+      <div class="cert-meta">Class ICT_TECH_260120011 · Feb–Jun 2026</div>
+    </div>
+    <div class="cert-card in-progress reveal">
+      <div class="cert-issuer">Google</div>
+      <div class="cert-name">IT Support Professional Certificate</div>
+      <div class="cert-meta">In Progress 2026</div>
+    </div>
+    <div class="cert-card in-progress reveal">
+      <div class="cert-issuer">Cisco</div>
+      <div class="cert-name">Introduction to Cybersecurity + Networking Basics</div>
+      <div class="cert-meta">In Progress 2026</div>
+    </div>
+    <div class="cert-card in-progress reveal">
+      <div class="cert-issuer">Splunk</div>
+      <div class="cert-name">The Art of Investigation</div>
+      <div class="cert-meta">Order #0002103898 · Free Training Unit</div>
+    </div>
+  </div>
+
+  <div style="height:60px;"></div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><span class="nav-logo-text">Cyber<span style="color:var(--primary)">Nate</span></span><p>SOC Analyst · DFIR Specialist · IT Consultant</p></div>
+      <div class="footer-col"><h4>Navigate</h4><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="projects.html">Projects</a></div>
+      <div class="footer-col"><h4>Resources</h4><a href="academy.html">Academy</a><a href="blog.html">Blog</a><a href="for-schools.html">For Schools</a></div>
+      <div class="footer-col"><h4>Contact</h4><a href="mailto:cybernate22@gmail.com">cybernate22@gmail.com</a><a href="https://wa.me/2347038171631" target="_blank">WhatsApp</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Nathaniel T.O — Cyber Nate.</span><span>Lagos, Nigeria</span></div>
+  </div>
+</footer>
+<a href="https://wa.me/2347038171631" target="_blank" class="wa-float"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+<div class="hire-strip"><p>🟢 <span>Open to Remote SOC Roles</span> · Relocation Ready</p><a href="mailto:nathanieltemitope.o@gmail.com">nathanieltemitope.o@gmail.com →</a></div>
+<script src="shared.js"></script>
+</body></html>

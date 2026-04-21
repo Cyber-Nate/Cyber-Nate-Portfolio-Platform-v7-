@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About — Nathaniel T.O | Cyber Nate</title>
+<meta name="description" content="About Nathaniel Temitope Ogunjobi — SOC Analyst, DFIR Specialist and Founder of Cyber Nate.">
+<link rel="stylesheet" href="shared.css" />
+<style>
+.about-hero {
+  padding-top: 140px;
+  display: grid; grid-template-columns: 1fr 1.3fr; gap: 80px; align-items: center;
+}
+.about-photo-wrap {
+  position: relative;
+}
+.about-photo {
+  width: 100%; border-radius: var(--radius);
+  border: 1px solid var(--border);
+  aspect-ratio: 3/4; object-fit: cover; object-position: top;
+}
+.about-photo-placeholder {
+  width: 100%; border-radius: var(--radius);
+  border: 2px dashed var(--border);
+  aspect-ratio: 3/4;
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: 12px;
+  background: var(--bg-card);
+  color: var(--text-3); font-size: 0.9rem;
+}
+.about-photo-glow {
+  position: absolute; inset: -1px;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, rgba(59,130,246,0.15), transparent 60%);
+  pointer-events: none;
+}
+.about-content .section-label { margin-bottom: 12px; }
+.about-content h1 { margin-bottom: 8px; }
+.about-title { color: var(--primary); font-family: var(--font-display); font-size: 1.05rem; font-weight: 600; margin-bottom: 20px; }
+.authority-line {
+  padding: 16px 20px; border-radius: var(--radius-sm);
+  background: rgba(59,130,246,0.06); border-left: 3px solid var(--primary);
+  font-size: 0.92rem; color: var(--text-2); margin: 20px 0; font-style: italic;
+}
+.about-body p { margin-bottom: 16px; }
+.about-cta { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 32px; }
+
+/* ─── EXPERIENCE TIMELINE ─── */
+.timeline { position: relative; padding-left: 28px; }
+.timeline::before {
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+  width: 2px; background: var(--border);
+}
+.tl-item { position: relative; margin-bottom: 40px; }
+.tl-item::before {
+  content: ''; position: absolute; left: -33px; top: 6px;
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--primary); border: 2px solid var(--bg);
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.2);
+}
+.tl-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; flex-wrap: wrap; }
+.tl-date { font-size: 0.8rem; color: var(--text-3); font-family: var(--font-mono); }
+.tl-org { font-size: 0.8rem; color: var(--primary); font-weight: 600; }
+.tl-item h4 { margin-bottom: 6px; }
+.tl-item p { font-size: 0.9rem; }
+
+/* ─── LEARNING STRIP ─── */
+.learning-strip {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); padding: 20px 24px;
+  display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+  margin-top: 40px;
+}
+.learning-strip strong { font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-3); white-space: nowrap; }
+.learning-items { display: flex; gap: 10px; flex-wrap: wrap; }
+.learn-pill {
+  font-size: 0.8rem; padding: 5px 12px; border-radius: 999px;
+  background: rgba(59,130,246,0.1); color: #93c5fd;
+  border: 1px solid rgba(59,130,246,0.2);
+}
+
+/* ─── SKILLS ─── */
+.skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.skill-group { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 24px; }
+.skill-group h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-3); margin-bottom: 14px; }
+.skill-list { display: flex; flex-direction: column; gap: 10px; }
+.skill-item { display: flex; justify-content: space-between; align-items: center; }
+.skill-name { font-size: 0.88rem; }
+.skill-bar-wrap { width: 80px; height: 4px; background: var(--border); border-radius: 2px; }
+.skill-bar { height: 100%; border-radius: 2px; background: var(--primary); }
+
+@media (max-width: 860px) {
+  .about-hero { grid-template-columns: 1fr; gap: 40px; }
+  .about-photo-wrap { max-width: 320px; }
+  .skills-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 540px) {
+  .skills-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="index.html" class="nav-logo">
+    <img src="assets/logo.png" alt="Cyber Nate Logo" onerror="this.style.display='none'">
+    <span class="nav-logo-text">Cyber<span>Nate</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="certifications.html">Certs</a></li>
+    <li><a href="academy.html">Academy</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="contact.html" class="btn-hire">Hire Me</a></li>
+  </ul>
+  <button class="hamburger"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu">
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a>
+  <a href="portfolio.html">Portfolio</a><a href="projects.html">Projects</a>
+  <a href="certifications.html">Certifications</a><a href="academy.html">Academy</a>
+  <a href="blog.html">Blog</a><a href="contact.html">Contact / Hire Me</a>
+</div>
+
+<div class="container">
+  <div class="about-hero">
+    <div class="about-photo-wrap reveal">
+      <img src="assets/profile.jpg" alt="Nathaniel T.O — Cyber Nate" class="about-photo"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="about-photo-placeholder" style="display:none;">
+        <span style="font-size:3rem;">👤</span>
+        <span>Profile Photo</span>
+        <span style="font-size:0.78rem;">Upload profile.jpg to assets/</span>
+      </div>
+      <div class="about-photo-glow"></div>
+    </div>
+    <div class="about-content">
+      <div class="section-label">About Me</div>
+      <h1>Nathaniel T.O<br>Ogunjobi</h1>
+      <div class="about-title">Cybersecurity Analyst · DFIR Specialist · Founder, Cyber Nate</div>
+      <div class="authority-line">
+        Currently serving in a government digital operations environment, supporting large-scale administrative and data systems across Nigeria's federal security landscape.
+      </div>
+      <div class="about-body">
+        <p>I'm a Lagos-based cybersecurity professional with over 5 years of practical experience spanning SOC analysis, digital forensics, threat intelligence, and government-scale IT operations. I hold a BSc in Computer Science from NOUN, Abeokuta.</p>
+        <p>As a Remote SOC Analyst at NexSecure Cybersecurity and IT/Cyber Intelligence Analyst at FGLEA, I monitor, investigate, and respond to threats daily — producing intelligence reports that hold up under operational scrutiny. My Week 5 Technical Precision Award from Red Team Leaders × 0xDelta Research recognises an AD compromise chain investigation that most candidates never attempt.</p>
+        <p>Cyber Nate is my personal brand — built to offer real security services to individuals, businesses, and schools, while educating the next generation of African cybersecurity professionals through the Cyber Nate Academy.</p>
+      </div>
+      <div class="about-cta">
+        <a href="assets/nathaniel_ogunjobi_cv.pdf" class="btn btn-primary" download>Download CV</a>
+        <a href="contact.html" class="btn btn-outline">Get in Touch</a>
+      </div>
+      <div class="learning-strip reveal">
+        <strong>Currently Pursuing:</strong>
+        <div class="learning-items">
+          <span class="learn-pill">CRDFA</span>
+          <span class="learn-pill">CTHIRI</span>
+          <span class="learn-pill">HTB CJCA</span>
+          <span class="learn-pill">HCIA-Security 2026</span>
+          <span class="learn-pill">IBM CyberAnalyst</span>
+          <span class="learn-pill">Google SecOps</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EXPERIENCE -->
+<section>
+  <div class="container">
+    <div class="section-label reveal">Work History</div>
+    <h2 class="reveal">Experience</h2>
+    <div class="timeline" style="margin-top:40px;">
+      <div class="tl-item reveal">
+        <div class="tl-meta">
+          <span class="tl-date">2024 – Present</span>
+          <span class="tl-org">NexSecure Cybersecurity</span>
+        </div>
+        <h4>Remote SOC Analyst</h4>
+        <p>Monitoring, threat detection, and incident response. Produced formal investigation reports covering phishing, credential compromise, USB malware, and VAPT engagements. Completed the NexSecure Bootcamp with certification (CERT-CFD6EDBE, March 2026).</p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-meta">
+          <span class="tl-date">2024 – Present</span>
+          <span class="tl-org">FGLEA — Federal Government Law Enforcement Agency</span>
+        </div>
+        <h4>IT/Cyber Intelligence Analyst · Focal Officer, Digital Workflow Platform</h4>
+        <p>Serving as Focal Officer for the nationwide Digital Workflow Platform rollout (live April 2026) — coordinating electronic arrest/seizure records, Webflow-based Criminal Record modules, and EDMS across all Nigerian states. Built a bespoke Nominal Roll web application managing 472 officers across 26 sections, replacing legacy Excel/Word workflows.</p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-meta">
+          <span class="tl-date">May 2022 – Jul 2023</span>
+          <span class="tl-org">DeDynamic Comprehensive College</span>
+        </div>
+        <h4>IT Instructor & Network Administrator</h4>
+        <p>Taught practical IT and cybersecurity concepts to secondary school students in Ogun State. Managed school network infrastructure and computer lab systems.</p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-meta">
+          <span class="tl-date">Feb 2021 – Apr 2022</span>
+          <span class="tl-org">Techphilia NG</span>
+        </div>
+        <h4>WordPress Developer</h4>
+        <p>Designed and maintained WordPress sites for clients across Sango-Ota. Custom theme development, plugin configuration, and performance optimisation.</p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-meta">
+          <span class="tl-date">Oct 2020 – Apr 2021</span>
+          <span class="tl-org">ChoiceField Cyber Cafe</span>
+        </div>
+        <h4>SIWES IT Intern</h4>
+        <p>Industrial attachment covering network setup, hardware maintenance, customer technical support, and software troubleshooting.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section style="padding-top:0;">
+  <div class="container">
+    <div class="section-label reveal">Core Competencies</div>
+    <h2 class="reveal">Skills</h2>
+    <div class="skills-grid" style="margin-top:32px;">
+      <div class="skill-group reveal">
+        <h4>Defensive Security</h4>
+        <div class="skill-list">
+          <div class="skill-item"><span class="skill-name">SIEM / Log Analysis</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:90%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">Incident Response</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:85%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">Threat Intelligence</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:82%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">OSINT</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:88%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">DFIR</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:80%"></div></div></div>
+        </div>
+      </div>
+      <div class="skill-group reveal">
+        <h4>Offensive Security</h4>
+        <div class="skill-list">
+          <div class="skill-item"><span class="skill-name">Web App VAPT</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:78%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">Network Pentesting</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:72%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">Vulnerability Assessment</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:80%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">Ethical Hacking</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:75%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">Sigma Rules</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:70%"></div></div></div>
+        </div>
+      </div>
+      <div class="skill-group reveal">
+        <h4>Technical & Dev</h4>
+        <div class="skill-list">
+          <div class="skill-item"><span class="skill-name">Python</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:74%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">HTML/CSS/JS</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:82%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">React</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:70%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">WordPress</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:85%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">Linux / Bash</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:78%"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="nav-logo-text">Cyber<span style="color:var(--primary)">Nate</span></span>
+        <p>SOC Analyst · DFIR Specialist · IT Consultant<br>Helping individuals and organizations stay secure in a digital world.</p>
+        <div class="footer-socials">
+          <a href="https://linkedin.com/in/nathaniel-ogunjobi" target="_blank" class="social-link"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="https://github.com/Cyber-Nate" target="_blank" class="social-link"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg></a>
+          <a href="https://web.facebook.com/cyber.nate.cybot/" target="_blank" class="social-link"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a href="https://youtube.com/@CyberNation01" target="_blank" class="social-link"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#0f172a"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Navigate</h4><a href="index.html">Home</a><a href="services.html">Services</a><a href="portfolio.html">Portfolio</a><a href="projects.html">Projects</a><a href="certifications.html">Certifications</a></div>
+      <div class="footer-col"><h4>Resources</h4><a href="academy.html">Academy</a><a href="blog.html">Blog</a><a href="for-schools.html">For Schools</a><a href="assets/mutacryptor_ti_report.pdf" download>TI Report</a></div>
+      <div class="footer-col"><h4>Contact</h4><a href="mailto:cybernate22@gmail.com">cybernate22@gmail.com</a><a href="https://wa.me/2347038171631" target="_blank">WhatsApp</a><a href="contact.html">Hire Me</a></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Nathaniel T.O — Cyber Nate. All rights reserved.</span>
+      <span>Lagos, Nigeria · Remote Worldwide</span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/2347038171631" target="_blank" class="wa-float">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+<div class="hire-strip">
+  <p>🟢 <span>Open to Remote SOC Roles</span> · Relocation Ready (AU · CA · UAE · NZ)</p>
+  <a href="mailto:nathanieltemitope.o@gmail.com">nathanieltemitope.o@gmail.com →</a>
+</div>
+<script src="shared.js"></script>
+</body>
+</html>

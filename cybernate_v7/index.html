@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nathaniel T.O — Cybersecurity Analyst & IT Consultant | Lagos, Nigeria</title>
+<meta name="description" content="Nathaniel Temitope Ogunjobi — SOC Analyst, DFIR Specialist & Founder of Cyber Nate. Helping organizations detect, investigate, and prevent cyber threats.">
+<link rel="stylesheet" href="shared.css" />
+<style>
+/* ─── HERO ─── */
+.hero {
+  min-height: 100vh;
+  display: flex; align-items: center;
+  padding-top: 90px;
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; top: -200px; right: -200px;
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(59,130,246,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+}
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--primary); margin-bottom: 20px;
+}
+.hero-eyebrow::before { content: ''; width: 20px; height: 2px; background: var(--primary); }
+.hero h1 { margin-bottom: 20px; }
+.hero h1 span { color: var(--primary); }
+.hero-sub { font-size: 1.05rem; color: var(--text-2); margin-bottom: 36px; max-width: 480px; }
+.hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+.hero-tags { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 28px; }
+
+/* Terminal */
+.terminal-wrap {
+  background: #020617;
+  border-radius: var(--radius);
+  border: 1px solid rgba(34,197,94,0.25);
+  box-shadow: 0 0 40px rgba(34,197,94,0.1), var(--shadow);
+  overflow: hidden;
+}
+.terminal-bar {
+  display: flex; align-items: center; gap: 8px;
+  padding: 12px 18px;
+  background: rgba(255,255,255,0.03);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.terminal-dot { width: 12px; height: 12px; border-radius: 50%; }
+.terminal-body {
+  padding: 20px;
+  font-family: var(--font-mono); font-size: 0.85rem; color: #22c55e;
+  min-height: 240px;
+}
+.terminal-line { margin-bottom: 6px; }
+.terminal-line.warn { color: #fbbf24; }
+.terminal-line.ok { color: #34d399; }
+.terminal-line.info { color: #60a5fa; }
+.cursor { display: inline-block; width: 8px; height: 15px; background: #22c55e; vertical-align: text-bottom; animation: blink 1s infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+/* Gateway */
+.gateway-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  margin-top: 60px;
+}
+.gateway-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 36px 28px;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+  display: block;
+}
+.gateway-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-8px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+}
+.gateway-icon {
+  width: 60px; height: 60px; border-radius: 16px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.8rem; margin: 0 auto 20px;
+}
+.gateway-card h3 { margin-bottom: 8px; }
+.gateway-card p { font-size: 0.9rem; color: var(--text-3); }
+.gateway-arrow {
+  display: inline-flex; align-items: center; gap: 6px; margin-top: 16px;
+  font-size: 0.85rem; font-weight: 600; color: var(--primary);
+}
+
+/* Trust strip */
+.trust-strip {
+  padding: 40px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  background: var(--bg-2);
+}
+.trust-inner { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; justify-content: center; }
+
+/* Stat bar */
+.stat-bar { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; padding: 40px 0; }
+
+/* TI Report */
+.ti-block {
+  background: linear-gradient(135deg, rgba(59,130,246,0.06) 0%, rgba(15,23,42,0) 60%),
+              var(--bg-card);
+  border: 1px solid rgba(59,130,246,0.25);
+  border-radius: var(--radius);
+  padding: 40px;
+  display: flex; gap: 40px; align-items: center;
+}
+.ti-badge {
+  flex-shrink: 0; background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.3);
+  border-radius: var(--radius-sm); padding: 10px 18px;
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--primary);
+}
+.ti-block h3 { font-size: 1.4rem; margin-bottom: 10px; }
+.ti-block p { font-size: 0.95rem; color: var(--text-2); max-width: 500px; }
+.ti-meta { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 16px; align-items: center; }
+
+/* Featured Project */
+.featured-project {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); overflow: hidden;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+}
+.fp-img {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  display: flex; align-items: center; justify-content: center;
+  min-height: 320px; padding: 40px;
+}
+.fp-demo-preview {
+  background: #020617; border-radius: 12px;
+  border: 1px solid rgba(34,197,94,0.2);
+  padding: 16px; width: 100%; font-family: var(--font-mono); font-size: 0.7rem; color: #4ade80;
+}
+.fp-demo-row { padding: 4px 0; border-bottom: 1px solid rgba(255,255,255,0.04); display: flex; gap: 12px; }
+.fp-demo-row span { color: var(--text-3); }
+.fp-info { padding: 40px; }
+.fp-info .tag { margin-bottom: 16px; }
+.fp-info h3 { font-size: 1.6rem; margin-bottom: 14px; }
+.fp-info p { margin-bottom: 24px; }
+.fp-stack { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 28px; }
+.fp-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* Services preview */
+.services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+.svc-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 24px; transition: var(--transition); }
+.svc-card:hover { border-color: var(--border-hover); transform: translateY(-4px); }
+.svc-icon { font-size: 1.6rem; margin-bottom: 14px; }
+.svc-card h4 { margin-bottom: 8px; }
+.svc-card p { font-size: 0.88rem; color: var(--text-3); }
+
+/* CTA */
+.cta-block {
+  text-align: center; padding: 80px 40px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.06) 0%, transparent 60%);
+  border: 1px solid var(--border); border-radius: var(--radius);
+}
+.cta-block h2 { margin-bottom: 16px; }
+.cta-block p { font-size: 1rem; color: var(--text-2); margin-bottom: 32px; }
+.cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .terminal-wrap { display: none; }
+  .gateway-grid { grid-template-columns: 1fr; }
+  .featured-project { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: 1fr 1fr; }
+  .ti-block { flex-direction: column; gap: 24px; }
+}
+@media (max-width: 540px) {
+  .services-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <a href="index.html" class="nav-logo">
+    <img src="assets/logo.png" alt="Cyber Nate Logo" onerror="this.style.display='none'">
+    <span class="nav-logo-text">Cyber<span>Nate</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="certifications.html">Certs</a></li>
+    <li><a href="academy.html">Academy</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="contact.html" class="btn-hire">Hire Me</a></li>
+  </ul>
+  <button class="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="projects.html">Projects</a>
+  <a href="certifications.html">Certifications</a>
+  <a href="academy.html">Academy</a>
+  <a href="blog.html">Blog</a>
+  <a href="contact.html">Contact / Hire Me</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="hero-eyebrow">Lagos, Nigeria · Available Remotely</div>
+        <h1>Cybersecurity Analyst<br><span>&</span> DFIR Specialist<br>Founder of Cyber Nate</h1>
+        <p class="hero-sub">Helping organizations detect, investigate, and prevent cyber threats — through intelligence-driven security operations and real-world DFIR experience.</p>
+        <div class="hero-btns">
+          <a href="projects.html" class="btn btn-primary">View Projects</a>
+          <a href="contact.html" class="btn btn-outline">Hire Me</a>
+        </div>
+        <div class="hero-tags">
+          <span class="tag tag-blue">SOC Analysis</span>
+          <span class="tag tag-green">DFIR</span>
+          <span class="tag tag-amber">Threat Intel</span>
+          <span class="tag tag-purple">OSINT</span>
+        </div>
+      </div>
+      <!-- TERMINAL -->
+      <div class="terminal-wrap">
+        <div class="terminal-bar">
+          <div class="terminal-dot" style="background:#ef4444"></div>
+          <div class="terminal-dot" style="background:#fbbf24"></div>
+          <div class="terminal-dot" style="background:#22c55e"></div>
+          <span style="margin-left:12px;font-family:var(--font-mono);font-size:0.78rem;color:var(--text-3)">cyber-nate@soc:~$</span>
+        </div>
+        <div class="terminal-body" id="terminal-text">
+          <span class="cursor" id="cursor"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- GATEWAY CARDS -->
+    <div class="gateway-grid">
+      <a href="portfolio.html" class="gateway-card reveal">
+        <div class="gateway-icon" style="background:rgba(59,130,246,0.1)">👨‍💻</div>
+        <h3>Recruiter</h3>
+        <p>View my SOC portfolio, certifications, and investigation reports</p>
+        <div class="gateway-arrow">View Portfolio →</div>
+      </a>
+      <a href="services.html" class="gateway-card reveal">
+        <div class="gateway-icon" style="background:rgba(34,197,94,0.1)">🏢</div>
+        <h3>Client</h3>
+        <p>Cybersecurity consulting, IT support, web development & more</p>
+        <div class="gateway-arrow">View Services →</div>
+      </a>
+      <a href="academy.html" class="gateway-card reveal">
+        <div class="gateway-icon" style="background:rgba(245,158,11,0.1)">🎓</div>
+        <h3>Student</h3>
+        <p>Practical cybersecurity & IT training from a working analyst</p>
+        <div class="gateway-arrow">Join Academy →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="container">
+    <div class="trust-inner">
+      <span style="font-size:0.78rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-3)">Trusted Expertise:</span>
+      <span class="stat-pill"><span>AMICDFA</span> Associate Member</span>
+      <span class="stat-pill"><span>CBTP</span> 93% — SecOps Group</span>
+      <span class="stat-pill"><span>CCEP</span> 98% — RTL</span>
+      <span class="stat-pill"><span>🏆</span> Week 5 Technical Precision Award</span>
+      <span class="stat-pill"><span>OPSWAT</span> CIP Certified</span>
+    </div>
+  </div>
+</div>
+
+<!-- STAT BAR -->
+<div class="container">
+  <div class="stat-bar reveal">
+    <div class="stat-pill"><span>5+</span> Years Experience</div>
+    <div class="stat-pill"><span>20+</span> Certifications</div>
+    <div class="stat-pill"><span>8</span> SOC Investigations</div>
+    <div class="stat-pill"><span>1</span> National Award</div>
+    <div class="stat-pill"><span>472</span> Officers — Govt System Deployed</div>
+  </div>
+</div>
+
+<!-- TI REPORT FEATURED -->
+<section style="padding-top:20px;padding-bottom:60px;">
+  <div class="container">
+    <div class="section-label reveal">Latest Intelligence Release</div>
+    <div class="ti-block reveal">
+      <div>
+        <div class="ti-badge">TLP:WHITE — Public Release</div>
+        <h3 style="margin-top:16px;">MutaCryptor Scam Network<br>Threat Intelligence Report v2</h3>
+        <p>8-phase attack chain analysis correlating Zorvyn FinTech / VRV Security / MutaEngine infrastructure — 18+ IOCs, MITRE ATT&CK TTPs, and full actor profiling across a sophisticated Nigerian-operated crypto fraud network.</p>
+        <div class="ti-meta">
+          <span class="tag tag-red">Fraud / Crypto Scam</span>
+          <span class="tag tag-amber">OSINT</span>
+          <span class="tag tag-blue">Threat Intel</span>
+          <span style="font-size:0.82rem;color:var(--text-3)">Released: April 18, 2026</span>
+        </div>
+        <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="case-studies/case-mutacryptor.html" class="btn btn-primary btn-sm">Read Report →</a>
+          <a href="assets/mutacryptor_ti_report.pdf" class="btn btn-outline btn-sm" download>Download PDF</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED PROJECT -->
+<section style="padding-top:20px;">
+  <div class="container">
+    <div class="section-label reveal">Featured Project</div>
+    <h2 class="reveal">School Management System Demo</h2>
+    <div class="featured-project reveal" style="margin-top:32px;">
+      <div class="fp-img">
+        <div class="fp-demo-preview">
+          <div class="fp-demo-row"><span>Module</span> Dashboard</div>
+          <div class="fp-demo-row"><span>Students</span> 247 enrolled</div>
+          <div class="fp-demo-row"><span>Courses</span> 12 active</div>
+          <div class="fp-demo-row"><span>Roles</span> Admin / Teacher / Student / Parent</div>
+          <div class="fp-demo-row"><span>Export</span> CSV ✓</div>
+          <div class="fp-demo-row"><span>Mode</span> Dark / Light ✓</div>
+          <div style="margin-top:10px;color:#22c55e">▶ Live demo available</div>
+        </div>
+      </div>
+      <div class="fp-info">
+        <span class="tag tag-green">Live · Open Source</span>
+        <h3>Cyber Nate LMS Demo</h3>
+        <p>A full-featured school management platform built with React — 12 modules, 4 user roles, dark/light mode, CRUD operations, and CSV export. Designed to showcase enterprise-grade SaaS capability for school digitisation projects.</p>
+        <div class="fp-stack">
+          <span class="tag tag-blue">React</span>
+          <span class="tag tag-purple">JavaScript</span>
+          <span class="tag tag-amber">Netlify</span>
+        </div>
+        <div class="fp-btns">
+          <a href="https://cybernatelmsdemo.netlify.app" target="_blank" class="btn btn-primary">Live Demo →</a>
+          <a href="https://github.com/Cyber-Nate/-Greenfield-School-Management-System-SMS-Demo" target="_blank" class="btn btn-outline">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUICK SERVICES PREVIEW -->
+<section>
+  <div class="container">
+    <div class="section-label reveal">What I Do</div>
+    <h2 class="reveal">Services</h2>
+    <div class="services-grid" style="margin-top:32px;">
+      <div class="svc-card reveal">
+        <div class="svc-icon">🛡️</div>
+        <h4>Cybersecurity Consulting</h4>
+        <p>Threat assessment, incident response, and security posture reviews for businesses.</p>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-icon">🔍</div>
+        <h4>Penetration Testing</h4>
+        <p>Web app and network VAPT with actionable remediation reports.</p>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-icon">💻</div>
+        <h4>Web Development</h4>
+        <p>Custom websites, landing pages, and LMS platforms built to convert.</p>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-icon">🖥️</div>
+        <h4>IT Support</h4>
+        <p>Hardware setup, network config, troubleshooting, and remote support.</p>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-icon">🎓</div>
+        <h4>Cybersecurity Training</h4>
+        <p>Practical courses for students, professionals, and corporate teams.</p>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-icon">🏫</div>
+        <h4>School Digital Solutions</h4>
+        <p>LMS deployment, ICT curriculum, digital records — end-to-end for schools.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px;">
+      <a href="services.html" class="btn btn-outline">View All Services →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section>
+  <div class="container">
+    <div class="cta-block reveal">
+      <div class="section-label" style="justify-content:center;">Let's Work Together</div>
+      <h2>Need a secure system or IT support?</h2>
+      <p>Whether you're a business needing cyber protection, a school needing digital systems, or a student building a career — Cyber Nate delivers.</p>
+      <div class="cta-btns">
+        <a href="contact.html" class="btn btn-primary">Contact Cyber Nate</a>
+        <a href="https://wa.me/2347038171631" target="_blank" class="btn btn-accent">WhatsApp Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="nav-logo-text">Cyber<span style="color:var(--primary)">Nate</span></span>
+        <p>SOC Analyst · DFIR Specialist · IT Consultant<br>Helping individuals and organizations stay secure in a digital world.</p>
+        <div class="footer-socials">
+          <a href="https://linkedin.com/in/nathaniel-ogunjobi" target="_blank" class="social-link" title="LinkedIn">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="https://github.com/Cyber-Nate" target="_blank" class="social-link" title="GitHub">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+          </a>
+          <a href="https://web.facebook.com/cyber.nate.cybot/" target="_blank" class="social-link" title="Facebook">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="https://youtube.com/@CyberNation01" target="_blank" class="social-link" title="YouTube">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#0f172a"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="projects.html">Projects</a>
+        <a href="certifications.html">Certifications</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="academy.html">Academy</a>
+        <a href="blog.html">Blog</a>
+        <a href="for-schools.html">For Schools</a>
+        <a href="assets/mutacryptor_ti_report.pdf" download>TI Report</a>
+        <a href="services.html#pricing">Pricing</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:cybernate22@gmail.com">cybernate22@gmail.com</a>
+        <a href="https://wa.me/2347038171631" target="_blank">WhatsApp</a>
+        <a href="contact.html">Hire Me</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Nathaniel T.O — Cyber Nate. All rights reserved.</span>
+      <span>Lagos, Nigeria · Remote Worldwide</span>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/2347038171631" target="_blank" class="wa-float" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- HIRE ME STRIP -->
+<div class="hire-strip">
+  <p>🟢 <span>Open to Remote SOC Roles</span> · Relocation Ready (AU · CA · UAE · NZ)</p>
+  <a href="mailto:nathanieltemitope.o@gmail.com">nathanieltemitope.o@gmail.com →</a>
+</div>
+
+<script src="shared.js"></script>
+<script>
+// ─── TERMINAL ───
+const lines = [
+  { text: '> Initializing Cyber Nate SOC System...', cls: 'info', delay: 0 },
+  { text: '> Loading threat intelligence feeds...', cls: '', delay: 700 },
+  { text: '> Connecting to SIEM dashboard...', cls: '', delay: 1400 },
+  { text: '> Monitoring network traffic — 2,847 events/sec', cls: '', delay: 2100 },
+  { text: '⚠ Suspicious activity detected — 192.168.1.47', cls: 'warn', delay: 3000 },
+  { text: '> Correlating IOCs against threat database...', cls: '', delay: 3600 },
+  { text: '> Investigating SSH brute force attempt...', cls: '', delay: 4200 },
+  { text: '  ... analyzing 247 failed login events ...', cls: 'info', delay: 5600 },
+  { text: '✔ Source IP 185.220.101.x — blocked at firewall', cls: 'ok', delay: 7200 },
+  { text: '✔ Alert escalated to Tier 2 — case #IR-2026-047', cls: 'ok', delay: 7900 },
+  { text: '> Generating incident report...', cls: '', delay: 8600 },
+  { text: '✔ System Secure — all threats mitigated', cls: 'ok', delay: 9300 },
+];
+
+const terminalEl = document.getElementById('terminal-text');
+const cursorEl = document.getElementById('cursor');
+let lineTimeout;
+
+function runTerminal() {
+  terminalEl.innerHTML = '';
+  const newCursor = document.createElement('span');
+  newCursor.className = 'cursor';
+  terminalEl.appendChild(newCursor);
+
+  lines.forEach(({ text, cls, delay }) => {
+    lineTimeout = setTimeout(() => {
+      const div = document.createElement('div');
+      div.className = 'terminal-line' + (cls ? ' ' + cls : '');
+      div.textContent = text;
+      terminalEl.insertBefore(div, newCursor);
+    }, delay);
+  });
+
+  // Loop with fade reset
+  setTimeout(() => {
+    terminalEl.style.transition = 'opacity 0.8s';
+    terminalEl.style.opacity = '0';
+    setTimeout(() => {
+      terminalEl.style.opacity = '1';
+      runTerminal();
+    }, 900);
+  }, lines[lines.length-1].delay + 3000);
+}
+
+if (terminalEl) runTerminal();
+</script>
+</body>
+</html>

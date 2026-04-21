@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Vapt — Case Study | Cyber Nate</title>
+<link rel="stylesheet" href="../shared.css"/><link rel="stylesheet" href="case-base.css"/>
+</head>
+<body>
+<nav class="navbar">
+  <a href="../index.html" class="nav-logo"><img src="../assets/logo.png" alt="" onerror="this.style.display='none'"><span class="nav-logo-text">Cyber<span>Nate</span></span></a>
+  <ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../projects.html" class="active">Projects</a></li><li><a href="../contact.html" class="btn-hire">Hire Me</a></li></ul>
+  <button class="hamburger"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu"><a href="../index.html">Home</a><a href="../projects.html">Projects</a><a href="../contact.html">Hire Me</a></div>
+<div class="container">
+  <div class="case-hero reveal">
+    <a href="../projects.html" style="font-size:0.85rem;color:var(--primary);display:inline-flex;gap:6px;margin-bottom:20px;">← Back to Projects</a>
+    <h1 id="title-placeholder"></h1>
+    <p style="color:var(--text-2);max-width:600px;margin-top:12px;" id="desc-placeholder"></p>
+    <div class="case-meta"><span>👤 Nathaniel T.O · 2026</span></div>
+  </div>
+  <div class="case-layout">
+    <div class="case-body reveal" id="content-placeholder"></div>
+    <div class="sidebar reveal"><div class="sidebar-toc"><h4>Contents</h4><a href="#">Detection Logic</a><a href="#">Analyst Reasoning</a><a href="#">Attack Timeline</a><a href="#">Mitigation</a></div></div>
+  </div>
+</div>
+<footer><div class="container"><div class="footer-grid">
+  <div class="footer-brand"><span class="nav-logo-text">Cyber<span style="color:var(--primary)">Nate</span></span></div>
+  <div class="footer-col"><h4>Cases</h4><a href="case-mutacryptor.html">MutaCryptor</a><a href="case-phishing.html">Phishing</a><a href="case-usb-malware.html">USB Malware</a><a href="case-vapt.html">VAPT</a></div>
+  <div class="footer-col"><h4>Navigate</h4><a href="../projects.html">All Projects</a><a href="../contact.html">Contact</a></div>
+  <div class="footer-col"><h4>Contact</h4><a href="mailto:cybernate22@gmail.com">cybernate22@gmail.com</a></div>
+</div><div class="footer-bottom"><span>© 2026 Nathaniel T.O</span></div></div></footer>
+<a href="https://wa.me/2347038171631" target="_blank" class="wa-float"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+<script src="../shared.js"></script>
+<script>
+const caseData = {
+  'vapt': {
+    title: 'Web Application VAPT — testphp.vulnweb.com',
+    desc: '8 findings including SQL injection, XSS, path traversal, and insecure file upload — full penetration test with CVSS scoring.',
+    tags: '<span class="tag tag-purple">VAPT</span><span class="tag tag-red">SQL Injection</span><span class="tag tag-amber">XSS</span><span class="tag tag-blue">OWASP Top 10</span>',
+    content: `
+      <h2>🔍 Detection Logic</h2>
+      <p>This was an authorised penetration test against testphp.vulnweb.com — a deliberately vulnerable web application maintained for security testing purposes. The scope included all web application attack vectors defined by the OWASP Testing Guide v4.</p>
+      <p>Testing was conducted in phases: reconnaissance, mapping, vulnerability identification, exploitation, and post-exploitation analysis.</p>
+      <div class="callout callout-amber"><h4>⚠ Scope</h4><p>Authorised test on testphp.vulnweb.com — no production systems were targeted. All findings are documented for educational purposes.</p></div>
+
+      <h2>🧠 Analyst Reasoning</h2>
+      <p>The application exhibited classic symptoms of a legacy PHP application with no modern security controls: direct SQL query construction from user input, reflected output without encoding, and directory traversal protections absent.</p>
+      <p>The most critical finding — an unauthenticated SQL injection in the product search parameter — would allow full database extraction in a real deployment. Combined with a file upload vulnerability accepting .php extensions, this represents a complete application compromise path.</p>
+
+      <h2>📊 Findings — 8 Vulnerabilities</h2>
+      <table class="ioc-table">
+        <thead><tr><th>#</th><th>Finding</th><th>Severity</th><th>CVSS</th></tr></thead>
+        <tbody>
+          <tr><td>F-01</td><td>SQL Injection — search parameter</td><td><span class="tag tag-red">Critical</span></td><td>9.8</td></tr>
+          <tr><td>F-02</td><td>Reflected XSS — multiple parameters</td><td><span class="tag tag-red">High</span></td><td>7.4</td></tr>
+          <tr><td>F-03</td><td>Insecure File Upload — .php accepted</td><td><span class="tag tag-red">Critical</span></td><td>9.1</td></tr>
+          <tr><td>F-04</td><td>Path Traversal — image parameter</td><td><span class="tag tag-amber">High</span></td><td>7.5</td></tr>
+          <tr><td>F-05</td><td>Sensitive Data Exposure — error messages</td><td><span class="tag tag-amber">Medium</span></td><td>5.3</td></tr>
+          <tr><td>F-06</td><td>Missing CSRF Protection — forms</td><td><span class="tag tag-amber">Medium</span></td><td>6.1</td></tr>
+          <tr><td>F-07</td><td>Broken Authentication — weak session IDs</td><td><span class="tag tag-amber">Medium</span></td><td>5.9</td></tr>
+          <tr><td>F-08</td><td>Outdated Server Components</td><td><span class="tag tag-blue">Low</span></td><td>3.7</td></tr>
+        </tbody>
+      </table>
+
+      <h2>🛡️ Mitigation Strategy</h2>
+      <ul>
+        <li><strong>F-01 SQLi:</strong> Use parameterised queries / prepared statements — never concatenate user input into SQL strings</li>
+        <li><strong>F-02 XSS:</strong> Encode all output using htmlspecialchars() or equivalent. Implement Content Security Policy headers</li>
+        <li><strong>F-03 File Upload:</strong> Whitelist allowed MIME types, rename uploads server-side, store outside web root</li>
+        <li><strong>F-04 Path Traversal:</strong> Validate and sanitise file path inputs — use realpath() to resolve and compare against allowed base directory</li>
+        <li><strong>F-05 Error Disclosure:</strong> Disable detailed error messages in production. Log server-side only</li>
+        <li><strong>F-06 CSRF:</strong> Implement CSRF tokens on all state-changing forms</li>
+      </ul>
+      <div class="case-nav"><a href="case-usb-malware.html">← USB Malware</a><a href="case-ad-attack.html">Next: AD Attack →</a></div>
+    `
+  },
+  'ad-attack': {
+    title: 'Active Directory Compromise Chain — Pass-the-Hash 🏆',
+    desc: 'Week 5 Technical Precision Award — Red Team Leaders × 0xDelta Research. Full AD compromise chain from initial foothold to domain admin via Pass-the-Hash.',
+    tags: '<span class="tag tag-red">Active Directory</span><span class="tag tag-purple">Pass-the-Hash</span><span class="tag tag-amber">Award Winner</span>',
+    content: `
+      <div class="callout callout-amber"><h4>🏆 Recognition</h4><p>This investigation earned the Week 5 Technical Precision Award from Red Team Leaders × 0xDelta Research — March 2026. Awarded for the highest-quality detection and documentation submission of the cohort.</p></div>
+      <h2>🔍 Detection Logic</h2>
+      <p>Detection began through anomalous lateral movement activity flagged in Windows Security Event logs. Event ID 4624 (Type 3 — Network logon) fired repeatedly across multiple workstations from a single source host that had no business reason to authenticate to those endpoints.</p>
+      <p>Correlation with Sysmon Event ID 10 (process access — LSASS) on the originating host confirmed credential dumping had occurred prior to the lateral movement, establishing the Pass-the-Hash pattern.</p>
+      <div class="callout callout-red"><h4>🚨 Detection Signature</h4><p>Sysmon 10: lsass.exe accessed by non-system process (mimikatz-like behaviour) → followed by Event 4624 Type 3 logins to 4 additional hosts within 6 minutes from same source.</p></div>
+
+      <h2>🧠 Analyst Reasoning</h2>
+      <p>Pass-the-Hash (PtH) is a credential theft technique exploiting the NTLM authentication protocol — the attacker extracts password hashes from LSASS memory and authenticates to network resources without knowing the plaintext password.</p>
+      <p>The attack chain here follows textbook methodology: initial compromise → privilege escalation → LSASS dump → hash extraction → lateral movement → domain controller targeting. The speed of execution (domain admin achieved within 23 minutes of initial access) suggests an experienced attacker with a pre-planned playbook.</p>
+
+      <h2>📊 Attack Timeline</h2>
+      <div class="timeline-visual">
+        <div class="tl-step"><div class="tl-time">T+0:00</div><div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div><div class="tl-content"><strong>Initial access via phishing — WS-ACCT-04</strong><span>Malicious macro executed. Local admin access obtained.</span></div></div>
+        <div class="tl-step"><div class="tl-time">T+0:04</div><div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div><div class="tl-content"><strong>Privilege escalation — UAC bypass</strong><span>eventvwr.exe UAC bypass technique. NT AUTHORITY\SYSTEM obtained.</span></div></div>
+        <div class="tl-step"><div class="tl-time">T+0:07</div><div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div><div class="tl-content"><strong>LSASS memory dump — credential harvesting</strong><span>Sysmon 10 fires. NTLM hashes extracted for 3 domain accounts including one DA.</span></div></div>
+        <div class="tl-step"><div class="tl-time">T+0:13</div><div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div><div class="tl-content"><strong>Lateral movement — 4 workstations</strong><span>Pass-the-Hash to WS-HR-01, WS-DEV-02, WS-MGR-08, SRV-FILE-01.</span></div></div>
+        <div class="tl-step"><div class="tl-time">T+0:23</div><div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div><div class="tl-content"><strong>Domain Controller access achieved</strong><span>DA hash used — DC-PRIMARY-01 authenticated. DCSync attack initiated.</span></div></div>
+        <div class="tl-step"><div class="tl-time">T+0:31</div><div class="tl-dot-col"><div class="tl-dot" style="background:#ef4444"></div><div class="tl-line"></div></div><div class="tl-content"><strong>SIEM alert — investigation initiated</strong><span>Analyst triage began. Isolation of affected workstations. AD password reset forced.</span></div></div>
+      </div>
+
+      <h2>🛡️ Mitigation Strategy</h2>
+      <ul>
+        <li>Enable <strong>Credential Guard</strong> on Windows 10/11 — protects LSASS from memory access by isolating credentials in a virtualisation-based security context</li>
+        <li>Implement <strong>Protected Users security group</strong> — prevents NTLM authentication for privileged accounts, eliminating PtH for those accounts</li>
+        <li>Deploy <strong>Local Administrator Password Solution (LAPS)</strong> — unique local admin passwords per machine, breaking lateral movement paths</li>
+        <li>Enable <strong>Sysmon with rule set</strong> targeting LSASS access (Event ID 10) — key detection signal for credential dumping</li>
+        <li>Restrict DA account usage to domain controllers only — no interactive logins on workstations</li>
+        <li>Implement <strong>tiered AD model</strong> — separates admin accounts by tier to limit blast radius</li>
+      </ul>
+      <div class="case-nav"><a href="case-vapt.html">← VAPT</a><a href="case-fake-internship.html">Next: Fake Internship →</a></div>
+    `
+  },
+  'fake-internship': {
+    title: 'Fake Internship Phishing — Redynox & Arch Technologies OSINT',
+    desc: 'OSINT-driven exposure of coordinated scam recruiting operations targeting Nigerian job seekers — March 2026.',
+    tags: '<span class="tag tag-blue">OSINT</span><span class="tag tag-amber">Social Engineering</span><span class="tag tag-green">Awareness</span>',
+    content: `
+      <h2>🔍 Detection Logic</h2>
+      <p>Investigation initiated after a community report on Nigerian tech forums flagged "Redynox Technologies" and "Arch Technologies" as suspicious entities offering paid internships to recent graduates. Initial signals: no company registration verifiable on CAC portal, job postings with unrealistically high stipends (₦150,000–₦250,000/month for entry-level positions), and pressure tactics demanding upfront "training fees" before resumption.</p>
+      <div class="callout callout-amber"><h4>🚩 Initial Red Flags</h4><p>No CAC registration. LinkedIn company pages created within 30 days of job postings. Contact numbers not in company's claimed city. Identical job description text across both "companies".</p></div>
+
+      <h2>🧠 Analyst Reasoning</h2>
+      <p>The use of two separate brand identities (Redynox and Arch Technologies) with identical underlying operations suggests a deliberate strategy to maintain operational continuity — if one brand gets reported and flagged, the other continues. This mirrors the MutaCryptor multi-brand strategy observed in the crypto fraud investigation.</p>
+      <p>The target profile (recent graduates, job seekers, computer science students) and the attack method (fake paid internship leading to "training fee" extraction) is a well-documented Nigerian advance fee fraud pattern adapted for the tech sector.</p>
+
+      <h2>📊 OSINT Findings</h2>
+      <table class="ioc-table">
+        <thead><tr><th>Finding</th><th>Redynox</th><th>Arch Technologies</th></tr></thead>
+        <tbody>
+          <tr><td>CAC Registration</td><td>Not found</td><td>Not found</td></tr>
+          <tr><td>LinkedIn Age</td><td>18 days at time of posting</td><td>24 days</td></tr>
+          <tr><td>Domain Registrar</td><td>Namecheap — privacy protected</td><td>Same registrar block</td></tr>
+          <tr><td>Contact Phone</td><td>Lagos number — routes to Abuja</td><td>Same number — different display name</td></tr>
+          <tr><td>Job Description</td><td>Identical text (verified via diff)</td><td>Identical text</td></tr>
+          <tr><td>Office Address</td><td>Unverifiable — no Google Maps presence</td><td>Non-existent building</td></tr>
+        </tbody>
+      </table>
+
+      <h2>🛡️ Mitigation Strategy</h2>
+      <ul>
+        <li>Verify company CAC registration at search.cac.gov.ng before engaging with any Nigerian company offering employment</li>
+        <li>Check LinkedIn company page creation date — legitimate companies have established profiles, not 2-week-old pages</li>
+        <li>No legitimate employer collects training fees before resumption — this is universally a scam signal</li>
+        <li>Cross-reference contact numbers across multiple brand names — shared numbers indicate the same operator</li>
+        <li>Report to EFCC cybercrime portal if you encounter these patterns: efcc.gov.ng/complaint</li>
+      </ul>
+      <div class="case-nav"><a href="case-ad-attack.html">← AD Attack</a><a href="case-ssh-bruteforce.html">Next: SSH Brute Force →</a></div>
+    `
+  },
+  'ssh-bruteforce': {
+    title: 'SSH Brute Force Detection with Custom Sigma Rule',
+    desc: 'Splunk-based detection of SSH brute force campaign with custom Sigma detection rule authored for reuse across SIEM platforms.',
+    tags: '<span class="tag tag-red">Brute Force</span><span class="tag tag-blue">Splunk</span><span class="tag tag-green">Sigma</span>',
+    content: `
+      <h2>🔍 Detection Logic</h2>
+      <p>Investigation triggered by a Splunk alert correlating auth.log events from a Linux server. The rule detected 247 failed SSH login attempts from a single IP within a 15-minute window — a classic dictionary-style brute force pattern. Source IP geolocated to a known hosting provider frequently used for automated scanning.</p>
+      <div class="code-block"><span class="comment"># Splunk SPL — SSH Brute Force Detection</span>
+index=linux_auth sourcetype=syslog "Failed password" 
+| rex field=_raw "from (?P&lt;src_ip&gt;\d+\.\d+\.\d+\.\d+)"
+| stats count by src_ip, _time span=15m
+| where count > 50
+| eval severity=if(count>200,"CRITICAL","HIGH")</div>
+
+      <h2>🧠 Analyst Reasoning</h2>
+      <p>The pattern of failures (sequential usernames: admin, root, ubuntu, pi, test, guest) is consistent with automated credential stuffing tools like Hydra or Medusa using default username lists. The absence of successful logins indicates the server's password policy was adequate — however, the exposure of SSH on port 22 to the public internet represents an unnecessary attack surface.</p>
+
+      <h2>📊 Sigma Rule — Authored</h2>
+      <div class="code-block"><span class="keyword">title:</span> SSH Brute Force Attack Detection
+<span class="keyword">id:</span> a7f2c819-4d31-4b8a-9e31-ssh-bruteforce
+<span class="keyword">status:</span> stable
+<span class="keyword">description:</span> Detects SSH brute force attempts - 50+ failures in 15 min
+<span class="keyword">logsource:</span>
+  product: linux
+  service: auth
+<span class="keyword">detection:</span>
+  selection:
+    body|contains: 'Failed password'
+  timeframe: 15m
+  condition: selection | count() by src_ip > 50
+<span class="keyword">falsepositives:</span>
+  - Automated deployment scripts with incorrect credentials
+<span class="keyword">level:</span> high
+<span class="keyword">tags:</span>
+  - attack.credential_access
+  - attack.t1110.001</div>
+
+      <h2>🛡️ Mitigation Strategy</h2>
+      <ul>
+        <li>Move SSH to a non-standard port — eliminates automated scanner noise (security through obscurity as a supplement, not replacement)</li>
+        <li>Implement fail2ban or equivalent — automatically ban IPs after N failed attempts</li>
+        <li>Disable password authentication entirely — enforce SSH key-based authentication only</li>
+        <li>Restrict SSH access by IP using firewall rules — whitelist known source IPs</li>
+        <li>Enable 2FA for SSH using PAM modules (Google Authenticator, TOTP)</li>
+        <li>Deploy this Sigma rule across your SIEM — available on GitHub at github.com/Cyber-Nate</li>
+      </ul>
+      <div class="case-nav"><a href="case-fake-internship.html">← Fake Internship</a><a href="case-log-correlation.html">Next: Log Correlation →</a></div>
+    `
+  },
+  'log-correlation': {
+    title: 'Multi-Source Log Correlation — Splunk & Sysmon',
+    desc: 'Cross-platform event correlation across Windows Security logs, Sysmon, and network logs to reconstruct a full attack chain.',
+    tags: '<span class="tag tag-blue">Splunk</span><span class="tag tag-purple">Sysmon</span><span class="tag tag-amber">SIEM</span>',
+    content: `
+      <h2>🔍 Detection Logic</h2>
+      <p>This investigation demonstrates the power of multi-source correlation — matching events across three distinct data sources (Windows Security Event Log, Sysmon, and Palo Alto firewall logs) to reconstruct an attack chain that would be invisible when viewing any single source in isolation.</p>
+      <p>The scenario: a user workstation became a pivot point for reconnaissance — detectable only by correlating the process creation events (Sysmon) with the network connections (firewall) and the authentication events (Security log) on the same timeline.</p>
+
+      <h2>🧠 Analyst Reasoning</h2>
+      <p>Modern attackers deliberately "live off the land" — using legitimate Windows tools (net.exe, ipconfig, nltest, whoami) to avoid triggering AV signatures. Without Sysmon process creation logging, these commands are completely invisible. Without correlating to network logs, you can't confirm whether reconnaissance data was exfiltrated. The value of this investigation is demonstrating why Sysmon + SIEM integration is non-negotiable for mature detection capability.</p>
+
+      <h2>📊 Correlation Query — Splunk</h2>
+      <div class="code-block"><span class="comment"># Correlate Sysmon process creation with network events</span>
+<span class="keyword">index=sysmon</span> EventID=1 
+  (CommandLine="*net*" OR CommandLine="*nltest*" OR CommandLine="*whoami*")
+| eval src_host=Computer
+| join src_host [
+    search <span class="keyword">index=firewall</span> action=allow direction=outbound
+    | eval src_host=src_hostname
+  ]
+| join src_host [
+    search <span class="keyword">index=wineventlog</span> EventCode=4624 Logon_Type=3
+    | eval src_host=ComputerName
+  ]
+| table _time, src_host, CommandLine, dst_ip, dst_port, Account_Name
+| sort _time</div>
+
+      <h2>🛡️ Mitigation Strategy</h2>
+      <ul>
+        <li>Deploy Sysmon with a well-tuned config (SwiftOnSecurity or olaf-sysmon-config) — it is free and dramatically improves visibility</li>
+        <li>Forward Sysmon, Windows Security, and network logs to a centralised SIEM — correlation is impossible without centralisation</li>
+        <li>Baseline "normal" behaviour for each host — anomaly detection depends on knowing what normal looks like first</li>
+        <li>Implement AppLocker or Windows Defender Application Control to restrict execution of reconnaissance tools by non-admin users</li>
+        <li>Alert on parent-child process anomalies (e.g. Word.exe spawning cmd.exe) — reliable indicator of macro-based initial access</li>
+      </ul>
+      <div class="case-nav"><a href="case-ssh-bruteforce.html">← SSH Brute Force</a><a href="../projects.html">All Projects →</a></div>
+    `
+  }
+};
+
+const page = window.location.pathname.split('/').pop().replace('case-','').replace('.html','');
+const data = caseData[page];
+if (data) {
+  document.querySelector('#title-placeholder').textContent = '';
+  document.querySelector('#title-placeholder').innerHTML = data.title;
+  document.querySelector('#desc-placeholder').textContent = data.desc;
+  document.querySelector('#content-placeholder').innerHTML = data.content;
+  // inject tags
+  const hero = document.querySelector('.case-hero');
+  const tagDiv = document.createElement('div');
+  tagDiv.style.cssText = 'display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px;';
+  tagDiv.innerHTML = data.tags;
+  hero.insertBefore(tagDiv, hero.querySelector('h1'));
+}
+</script>
+</body></html>
